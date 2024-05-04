@@ -21,19 +21,35 @@ public class Combiner : MonoBehaviour
         temas = collision.gameObject;
         SearchRecipe(itemso.ItemID);
     }
+    
+    public bool SearchRecipe2(string itemid)
+    {
+        ItemSO toCraftitemSO = CraftingMech.Instance.SearchRecipes(itemid, currentPlateObject.ItemID);
+        if (toCraftitemSO == null) return false;
+        CreateNewItemFromRecipe(toCraftitemSO);
+        return true;
+    }
 
+    private void CreateNewItemFromRecipe(ItemSO toCreateObject)
+    {
+        GameObject toInstantiate = Instantiate(toCreateObject.prefab);
+        if (ClosestObjectManager.Instance.nearestObject.GetComponent<Tezgah>().ContainedObject != null)
+        {
+            Destroy(ClosestObjectManager.Instance.nearestObject.GetComponent<Tezgah>().ContainedObject);
+        }
+        ClosestObjectManager.Instance.nearestObject.GetComponent<Tezgah>().ContainedObject = toInstantiate;
+        toInstantiate.transform.position = transform.position;
+        Destroy(gameObject);
+    }
 
     private void SearchRecipe(string itemid)
     {
-        Debug.Log("a" + itemid + " : " + currentPlateObject.ItemID);
         ItemSO toCraftitemSO = CraftingMech.Instance.SearchRecipes(itemid, currentPlateObject.ItemID);
         if (toCraftitemSO == null) return;
         GameObject toInstantiate = Instantiate(toCraftitemSO.prefab);
         toInstantiate.transform.position = transform.position;
-
         Destroy(temas);
         Destroy(this.gameObject);
-        return;
     }
 
 }

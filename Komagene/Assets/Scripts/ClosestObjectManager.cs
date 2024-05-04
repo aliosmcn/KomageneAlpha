@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,20 @@ public class ClosestObjectManager : MonoBehaviour
 
     [SerializeField] LayerMask mask;
 
+    private static ClosestObjectManager instance;
 
+    public static ClosestObjectManager Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Update()
     {

@@ -9,7 +9,7 @@ public class CharacterPickController : Character
     [SerializeField] private VoidEvent onSpacePressed;
 
 
-    [SerializeField] private GameObject containingObject = null;
+    [SerializeField] private GameObject containingObject = null; // Karakterin tuttuğu
 
     ClosestObjectManager closestObjectManager;
 
@@ -53,29 +53,64 @@ public class CharacterPickController : Character
             if (closestObjectManager.nearestObject != null)
             {
                 tezgah = closestObjectManager.nearestObject.GetComponent<Tezgah>();
-                tezgah.containedObject = null;
+                tezgah.ContainedObject = null;
             }
         }
         else
         {
-            // Elim dolu , Dolay�s�yla item� b�rak.
+            // Elim dolu , Dolay�s�yla item� b�rak.
             if (closestObjectManager.nearestObject == null)
             {
-                //Yere b�rak
+                //Yere b�rak
                 SetRbAndColliderActive(true);
                 containingObject.transform.parent = null;
                 containingObject = null;
             }
             else
             {
-                //masaya b�rak
+                //masaya b�rak
                 tezgah = closestObjectManager.nearestObject.GetComponent<Tezgah>();
-                SetRbAndColliderActive(true);
-                containingObject.transform.parent = null;
-                containingObject.transform.position = new Vector3(closestObjectManager.nearestObject.transform.position.x, closestObjectManager.nearestObject.transform.position.y + 0.83f, closestObjectManager.nearestObject.transform.position.z);
-                tezgah.containedObject = containingObject;
-                containingObject = null;
-                
+                if (tezgah.ContainedObject != null)
+                {
+                    //*  tezgahtaki obje combiner sınıfını ve bırakmak istediğimiz obje combiner sınıfını taşıyor mu ?
+                    if (tezgah.ContainedObject.GetComponent<Combiner>() && containingObject.GetComponent<Combiner>())
+                    {
+                        return;
+                    }
+                    //tezgahtaki obje ve bırakmak istediğimiz objelerin ikisinde de combiner yok mu ?
+                    if (!tezgah.ContainedObject.GetComponent<Combiner>() && !containingObject.GetComponent<Combiner>())
+                    {
+                        return;
+                    }
+
+                    if (tezgah.ContainedObject.GetComponent<Combiner>())
+                    {
+                        Combiner c = tezgah.ContainedObject.GetComponent<Combiner>();
+                        if (c.SearchRecipe2(containingObject.GetComponent<Item>().ItemData.ItemID))
+                        {
+                            Destroy(containingObject);
+                        }
+                        return;
+                    }
+                    
+                    if (containingObject.GetComponent<Combiner>())
+                    {
+                        Combiner c = containingObject.GetComponent<Combiner>();
+                        c.SearchRecipe2(tezgah.ContainedObject.GetComponent<Item>().ItemData.ItemID);
+                        return;
+                    }
+
+                }
+                else
+                {
+                    //Tezgah boşsa bu işleri yap
+                    tezgah.setContainedObject(containingObject);
+
+                    SetRbAndColliderActive(true);
+                    containingObject.transform.parent = null;
+                    containingObject.transform.position = new Vector3(closestObjectManager.nearestObject.transform.position.x, closestObjectManager.nearestObject.transform.position.y + 0.83f, closestObjectManager.nearestObject.transform.position.z);
+                    containingObject = null;
+                }
             }
         }
     }

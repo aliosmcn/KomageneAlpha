@@ -26,6 +26,7 @@ public class CraftingMech : MonoBehaviour
     [SerializeField] private List<CraftingRecipe> recipes;
 
 
+    // Yaratılacak objeyi döndürür.
     public ItemSO SearchRecipes(string item1id, string item2id)
     {
         foreach(var recipe in recipes)
