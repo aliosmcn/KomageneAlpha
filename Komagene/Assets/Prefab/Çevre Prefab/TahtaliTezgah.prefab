@@ -1,0 +1,161 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7432953428970345556
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f228ca947c62e754093c2fd0219d10fb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f228ca947c62e754093c2fd0219d10fb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.9260094
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f228ca947c62e754093c2fd0219d10fb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.0029955
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f228ca947c62e754093c2fd0219d10fb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5000007
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f228ca947c62e754093c2fd0219d10fb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5000007
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f228ca947c62e754093c2fd0219d10fb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.49999928
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f228ca947c62e754093c2fd0219d10fb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.49999928
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f228ca947c62e754093c2fd0219d10fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f228ca947c62e754093c2fd0219d10fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f228ca947c62e754093c2fd0219d10fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f228ca947c62e754093c2fd0219d10fb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ae946902bc9a2bb45b26aa07b3f3cca3, type: 2}
+    - target: {fileID: -7511558181221131132, guid: f228ca947c62e754093c2fd0219d10fb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ae946902bc9a2bb45b26aa07b3f3cca3, type: 2}
+    - target: {fileID: -7511558181221131132, guid: f228ca947c62e754093c2fd0219d10fb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: ae946902bc9a2bb45b26aa07b3f3cca3, type: 2}
+    - target: {fileID: 919132149155446097, guid: f228ca947c62e754093c2fd0219d10fb,
+        type: 3}
+      propertyPath: m_Name
+      value: TahtaliTezgah
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f228ca947c62e754093c2fd0219d10fb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f228ca947c62e754093c2fd0219d10fb,
+        type: 3}
+      propertyPath: m_TagString
+      value: DogramaTahtasi
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f228ca947c62e754093c2fd0219d10fb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5360905896256063069}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f228ca947c62e754093c2fd0219d10fb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2062908477067140581}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f228ca947c62e754093c2fd0219d10fb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4586097607848048343}
+  m_SourcePrefab: {fileID: 100100000, guid: f228ca947c62e754093c2fd0219d10fb, type: 3}
+--- !u!1 &7774987650108336389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f228ca947c62e754093c2fd0219d10fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 7432953428970345556}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5360905896256063069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7774987650108336389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2d691708d0e1747b43d9f6c8ce5a44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSliceToggle: {fileID: 11400000, guid: e0c3d7ca1d0320e42bcc92e793b66065, type: 2}
+  foods: []
+  slicedObjects: []
+--- !u!65 &2062908477067140581
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7774987650108336389}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.010185635, y: 0.010185634, z: 0.008520189}
+  m_Center: {x: -6.9849193e-10, y: 4.656613e-10, z: 0.0042600944}
+--- !u!114 &4586097607848048343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7774987650108336389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d04e6229da5614db186997747fc597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
