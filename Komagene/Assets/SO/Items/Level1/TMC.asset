@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: TMC
   itemName: tabakMarulCig
-  itemIcon: {fileID: 21300000, guid: 5a01968c00deb4d4ca3c2165b3ae49a1, type: 3}
+  itemIcon: {fileID: 21300000, guid: 1e88ad5fca0e21446b512758acc3ca4d, type: 3}
   prefab: {fileID: 202486057843962612, guid: ec8f280803e5e4440a773acd3b287bac, type: 3}

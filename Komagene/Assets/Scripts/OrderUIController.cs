@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Profiling;
 using UnityEngine.UI;
 
 public class OrderUIController : MonoBehaviour
@@ -11,7 +13,7 @@ public class OrderUIController : MonoBehaviour
     [SerializeField] private GameObject orderUIPrefab;
 
     [SerializeField] private List<GameObject> orderUIs;
-    
+
     private void OnEnable()
     {
         onOrderCreated.AddListener(CreateOrderUI);
@@ -26,8 +28,12 @@ public class OrderUIController : MonoBehaviour
 
     private void CreateOrderUI(OrderSO order)
     {
+        Sprite recipeIcon = order.OrderRecipe.result.ItemIcon;
+        orderUIPrefab.GetComponent<Image>().sprite = recipeIcon;
         
+        Instantiate(orderUIPrefab, this.transform);
     }
+
 
     private void RemoveOrderFromUI(OrderSO orderToClose)
     {

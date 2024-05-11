@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07009a03b5cb74548bc454e21cbeb801, type: 3}
   m_Name: TMC
   m_EditorClassIdentifier: 
-  orderSprite: {fileID: 0}
-  orderRecipe: {fileID: 0}
+  orderSprite: {fileID: 21300000, guid: 1e88ad5fca0e21446b512758acc3ca4d, type: 3}
+  orderRecipe: {fileID: 11400000, guid: ec923afa04366a34ba948f07e8ea84ce, type: 2}

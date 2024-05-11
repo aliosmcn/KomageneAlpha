@@ -11,7 +11,6 @@ public class OrderSystem : MonoTimer
     [SerializeField] private ItemSOEvent onOrderDelivered;
     [SerializeField] private OrderSOEvent onOrderClosed;
     
-    int maxOrder = 3;
     int randomOrderIndex;
 
     // Gelebilecek bütün orderlar
@@ -44,13 +43,13 @@ public class OrderSystem : MonoTimer
 
     protected override void TimeIsUp()
     {
-            CreateNewOrder();
-            ResetTimer();
+        CreateNewOrder();
+        ResetTimer();
     }
 
     private void CreateNewOrder()
     {
-        if (currentOrders.Count >= 3) return;
+        if (currentOrders.Count >= maxOrderCount) return;
         randomOrderIndex = Random.Range(0, Orders.Count);
         OrderSO newOrder = Orders[randomOrderIndex];
         currentOrders.Add(newOrder);
