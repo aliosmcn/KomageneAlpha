@@ -5,7 +5,7 @@ using UnityEngine;
 public class Tezgah : MonoBehaviour
 {
     // Masada duran obje
-    [SerializeField]private GameObject containedObject = null;
+    [SerializeField] private GameObject containedObject = null;
 
     public GameObject ContainedObject
     {

@@ -30,13 +30,24 @@ public class OrderUIController : MonoBehaviour
     {
         Sprite recipeIcon = order.OrderRecipe.result.ItemIcon;
         orderUIPrefab.GetComponent<Image>().sprite = recipeIcon;
-        
-        Instantiate(orderUIPrefab, this.transform);
+        orderUIPrefab.GetComponent<OrderUI>().currentOrder = order;
+        orderUIs.Add(Instantiate(orderUIPrefab, this.transform));
     }
 
 
     private void RemoveOrderFromUI(OrderSO orderToClose)
     {
-        
+        int removeInt = -1;
+        foreach(GameObject orderUi in orderUIs)
+        {
+            OrderSO tempOseo = orderUi.GetComponent<OrderUI>().currentOrder;
+            if (tempOseo == orderToClose)
+            {
+                removeInt = orderUIs.IndexOf(orderUi);                
+            }
+        }
+        GameObject tempObject = orderUIs[removeInt];
+        orderUIs.RemoveAt(removeInt);
+        Destroy(tempObject);
     }
 }

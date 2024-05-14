@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Marul
   itemIcon: {fileID: 0}
   prefab: {fileID: 524595435805484331, guid: be6d4b536d391f34788a64147e8630fb, type: 3}
+  canSlice: 1

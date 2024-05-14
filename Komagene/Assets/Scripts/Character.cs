@@ -91,6 +91,8 @@ public abstract class Character : MonoBehaviour
     private void MoveLock()
     {
         canMove = !canMove;
+        movement = Vector3.zero;
+        animator.SetBool("IsWalk", false);
     }
 
 }

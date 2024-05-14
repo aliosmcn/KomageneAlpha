@@ -4,6 +4,8 @@ using System.Runtime.InteropServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
+
 public class OrderUI : MonoTimer
 {
     [SerializeField] private OrderSOEvent onOrderCreated;
@@ -11,42 +13,29 @@ public class OrderUI : MonoTimer
     [SerializeField] private OrderSOEvent onOrderTimeOut;
     
     
-    [SerializeField] private float orderTime = 30f; 
-    [SerializeField] private OrderSO currentOrder;
+    [SerializeField] private float orderTime = 3f; 
+    [SerializeField] public OrderSO currentOrder;
 
-
-    private void OnEnable()
-    {
-        onOrderCreated.AddListener(SetOrderSO);
-        onOrderClosed.AddListener(RemoveOrderSO);
-    }
-
-    private void OnDisable()
-    {
-        onOrderCreated.RemoveListener(SetOrderSO);
-        onOrderClosed.RemoveListener(RemoveOrderSO);
-    }
+    LTRect uiItself;
 
     void Start()
     {
+        
         base.setRemainingTime(orderTime);
         base.StartTimer();
+        
+        
+    }
+
+    private void updateHeight(float newVal)
+    {
+        
     }
 
     protected override void TimeIsUp()
     {
         onOrderTimeOut.Raise(currentOrder);
+        onOrderClosed.Raise(currentOrder);
     }
 
-    private void SetOrderSO(OrderSO order)
-    {
-        if (currentOrder != null) return;
-        else currentOrder = order;
-    }
-
-    private void RemoveOrderSO(OrderSO order)
-    {
-        if (currentOrder == null) return;
-        else currentOrder = null;
-    }
 }

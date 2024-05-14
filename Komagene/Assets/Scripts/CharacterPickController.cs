@@ -9,7 +9,7 @@ public class CharacterPickController : Character
     [SerializeField] private VoidEvent onSpacePressed;
 
 
-    [SerializeField] private GameObject containingObject = null; // Karakterin tuttuğu
+    [SerializeField] public GameObject containingObject = null; // Karakterin tuttuğu
 
     ClosestObjectManager closestObjectManager;
 
@@ -61,7 +61,7 @@ public class CharacterPickController : Character
             // Elim dolu , Dolay�s�yla item� b�rak.
             if (closestObjectManager.nearestObject == null)
             {
-                //Yere b�rak
+                //Yere bırak
                 SetRbAndColliderActive(true);
                 containingObject.transform.parent = null;
                 containingObject = null;

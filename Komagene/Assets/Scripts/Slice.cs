@@ -2,20 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class Slice : MonoBehaviour
 {
-
+    [SerializeField] List<ItemSO> slicedObjects;
     [SerializeField] private VoidEvent onSliceToggle;
+    
 
     bool playerHere;
-
-    string sliceObjectTag;
-
-    public GameObject[] foods;
-    public GameObject[] slicedObjects;
-
-
+    
 
     void Update()
     {
@@ -26,41 +22,37 @@ public class Slice : MonoBehaviour
     {
         if (playerHere && Input.GetKeyDown(KeyCode.LeftControl))
         {
-            if (this.transform.childCount > 0)
+            if (this.transform.childCount > 0 && transform.GetChild(0).GetComponent<Item>().ItemData.CanSlice)
             {
-                
-                Debug.Log("Kes");
                 onSliceToggle.Raise();
                 Invoke("Destroy", 4f);
             }
         }
     }
 
-    
-
     void Destroy()
     {
-        Debug.Log("Kesildi");
-        Destroy(transform.GetChild(0).gameObject);
-        sliceObjectTag = transform.GetChild(0).tag;
         onSliceToggle.Raise();
-        Create();
+        string newObjectID = transform.GetChild(0).GetComponent<Item>().ItemData.ItemID + "D";
+        CreateNewObject(newObjectID);
+        Destroy(transform.GetChild(0).gameObject);
+        
     }
 
-    void Create()
+    void CreateNewObject(string objID)
     {
-        switch (sliceObjectTag)
+        
+        foreach (var item in slicedObjects)
         {
-            case "Domates":
-                //kesilmiþ domates oluþtur
-                break;
-            default:
-                break;
-        }
-    }
+            
+            if (item.ItemID == objID)
+            {
+                GameObject slicedObject = Instantiate(item.prefab);
+                slicedObject.transform.parent = this.transform;
 
-    void Transition(GameObject obj)
-    {
+                return;
+            }
+        }
         
     }
 

@@ -29,6 +29,15 @@ public class ItemSO : ScriptableObject
     }
 
     [SerializeField] public GameObject prefab;
+    [SerializeField] private bool canSlice;
+
+    public bool CanSlice
+    {
+        get
+        {
+            return canSlice;
+        }
+    }
 
 
 }

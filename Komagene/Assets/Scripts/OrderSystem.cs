@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -8,7 +9,7 @@ public class OrderSystem : MonoTimer
 
     [SerializeField] private OrderSOEvent onOrderTimeOut;
     [SerializeField] private OrderSOEvent onOrderCreated;
-    [SerializeField] private ItemSOEvent onOrderDelivered;
+    [SerializeField] private ItemSOEvent onOrderDelivered; //bu teslim tezgahında raise edilecek
     [SerializeField] private OrderSOEvent onOrderClosed;
     
     int randomOrderIndex;
@@ -58,6 +59,7 @@ public class OrderSystem : MonoTimer
 
     public void CloseOrder(OrderSO toCloseOrder)
     {
+        
         currentOrders.Remove(toCloseOrder);
     }
 
@@ -78,5 +80,7 @@ public class OrderSystem : MonoTimer
             }
         }
     }
+    
+    
     
 }

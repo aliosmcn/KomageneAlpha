@@ -31,6 +31,11 @@ public class CraftingMech : MonoBehaviour
     {
         foreach(var recipe in recipes)
         {
+            if (recipe.sliceableRecipe)
+            {
+                continue;
+            }
+
             int count = 0;
 
             foreach (var material in recipe.materials)
@@ -53,6 +58,4 @@ public class CraftingMech : MonoBehaviour
         }
         return null;
     }
-
-
 }

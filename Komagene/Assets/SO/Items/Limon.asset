@@ -15,3 +15,5 @@ MonoBehaviour:
   itemId: S
   itemName: Limon
   itemIcon: {fileID: 0}
+  prefab: {fileID: 0}
+  canSlice: 1
