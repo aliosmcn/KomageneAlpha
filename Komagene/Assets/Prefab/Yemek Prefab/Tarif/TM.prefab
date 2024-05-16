@@ -70,6 +70,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 84c095d256166284b9039d247ab3fae6,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84c095d256166284b9039d247ab3fae6,
+        type: 3}
       propertyPath: m_TagString
       value: item
       objectReference: {fileID: 0}
@@ -164,12 +169,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ee356a91495a54db9ffce5b839a87c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpPoint: {fileID: 0}
-  playerHere: 0
-  readyToBreak: 0
-  itemIsPicked: 0
-  first: 0
-  canPick: 0
+  interactMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &9077653976127417576
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,8 +7,9 @@ public class CharacterPickController : Character
 
     [Header("Events")]
     [SerializeField] private VoidEvent onSpacePressed;
+    [SerializeField] private ItemSOEvent onOrderDelivered;
 
-
+    [Header("Objects")]
     [SerializeField] public GameObject containingObject = null; // Karakterin tuttuğu
 
     ClosestObjectManager closestObjectManager;
@@ -24,12 +25,14 @@ public class CharacterPickController : Character
     {
         base.OnEnable();
         onSpacePressed.AddListener(SpacePressed);
+        onOrderDelivered.AddListener(ClearToPickObject);
     }
 
     protected override void OnDisable()
     {
         base.OnDisable();
         onSpacePressed.RemoveListener(SpacePressed);
+        onOrderDelivered.RemoveListener(ClearToPickObject);
     }
 
     protected override void Start()
@@ -38,10 +41,14 @@ public class CharacterPickController : Character
         closestObjectManager = GetComponent<ClosestObjectManager>();
     }
 
-
+    private void ClearToPickObject(ItemSO example)
+    {
+        toPickObject = null;
+    }
 
     private void SpacePressed()
     {
+        // ----------- ELİMİZDE OBJE YOKSA ------------
         if(containingObject == null)
         {
             containingObject = toPickObject;
@@ -56,19 +63,17 @@ public class CharacterPickController : Character
                 tezgah.ContainedObject = null;
             }
         }
-        else
+        else // --------- ELİM DOLU, İTEMİ BIRAK ----------
         {
-            // Elim dolu , Dolay�s�yla item� b�rak.
+            //YERE BIRAK
             if (closestObjectManager.nearestObject == null)
             {
-                //Yere bırak
                 SetRbAndColliderActive(true);
                 containingObject.transform.parent = null;
                 containingObject = null;
             }
-            else
+            else //MASAYA BIRAK
             {
-                //masaya b�rak
                 tezgah = closestObjectManager.nearestObject.GetComponent<Tezgah>();
                 if (tezgah.ContainedObject != null)
                 {
@@ -103,12 +108,12 @@ public class CharacterPickController : Character
                 }
                 else
                 {
-                    //Tezgah boşsa bu işleri yap
-                    tezgah.setContainedObject(containingObject);
+                    //TEZGAH BOŞSA
+                    tezgah.SetContainedObject(containingObject);
 
                     SetRbAndColliderActive(true);
-                    containingObject.transform.parent = null;
-                    containingObject.transform.position = new Vector3(closestObjectManager.nearestObject.transform.position.x, closestObjectManager.nearestObject.transform.position.y + 0.83f, closestObjectManager.nearestObject.transform.position.z);
+                    containingObject.transform.parent = closestObjectManager.nearestObject.transform;
+                    containingObject.transform.position = new Vector3(closestObjectManager.nearestObject.transform.position.x, closestObjectManager.nearestObject.transform.position.y + 0.40f, closestObjectManager.nearestObject.transform.position.z);
                     containingObject = null;
                 }
             }

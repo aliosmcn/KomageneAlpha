@@ -8,9 +8,9 @@ public class Slice : MonoBehaviour
 {
     [SerializeField] List<ItemSO> slicedObjects;
     [SerializeField] private VoidEvent onSliceToggle;
-    
 
-    bool playerHere;
+
+    [SerializeField] private bool playerHere;
     
 
     void Update()
@@ -25,7 +25,7 @@ public class Slice : MonoBehaviour
             if (this.transform.childCount > 0 && transform.GetChild(0).GetComponent<Item>().ItemData.CanSlice)
             {
                 onSliceToggle.Raise();
-                Invoke("Destroy", 4f);
+                Invoke(nameof(Destroy), 4f);
             }
         }
     }
@@ -35,6 +35,7 @@ public class Slice : MonoBehaviour
         onSliceToggle.Raise();
         string newObjectID = transform.GetChild(0).GetComponent<Item>().ItemData.ItemID + "D";
         CreateNewObject(newObjectID);
+        Debug.Log("BEFORE: " + transform.GetChild(0).GetComponent<Item>().ItemData.ItemID + "AFTER: " + newObjectID);
         Destroy(transform.GetChild(0).gameObject);
         
     }
@@ -49,6 +50,7 @@ public class Slice : MonoBehaviour
             {
                 GameObject slicedObject = Instantiate(item.prefab);
                 slicedObject.transform.parent = this.transform;
+                slicedObject.transform.position = new Vector3(transform.position.x, transform.position.y + 0.38f, transform.position.z);
 
                 return;
             }

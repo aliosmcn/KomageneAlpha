@@ -10,18 +10,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f228ca947c62e754093c2fd0219d10fb,
         type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f228ca947c62e754093c2fd0219d10fb,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f228ca947c62e754093c2fd0219d10fb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9260094
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f228ca947c62e754093c2fd0219d10fb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.0029955
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f228ca947c62e754093c2fd0219d10fb,
         type: 3}
@@ -123,9 +128,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd2d691708d0e1747b43d9f6c8ce5a44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slicedObjects:
+  - {fileID: 11400000, guid: c3f3d4598dc20664ebaae07b55eadec7, type: 2}
+  - {fileID: 11400000, guid: 7c109c5e231acd84795a33b4df25e53e, type: 2}
+  - {fileID: 11400000, guid: 10d732d34a5ffd94d8ab115b9075c2d7, type: 2}
   onSliceToggle: {fileID: 11400000, guid: e0c3d7ca1d0320e42bcc92e793b66065, type: 2}
-  foods: []
-  slicedObjects: []
 --- !u!65 &2062908477067140581
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -159,3 +166,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d04e6229da5614db186997747fc597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  containedObject: {fileID: 0}

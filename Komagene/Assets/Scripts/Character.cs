@@ -8,7 +8,7 @@ public abstract class Character : MonoBehaviour
     [SerializeField] private float moveSpeed = 6f; // Karakterin hareket hýzý
     [SerializeField] private Vector3 movement; // Hareket vektörü
 
-    [Header("Events")]
+    [Header("Base Events")]
     [SerializeField] private FloatEvent onHorizontalValueChanged;
     [SerializeField] private FloatEvent onVerticalValueChanged;
     [SerializeField] private VoidEvent onSliceToggle;

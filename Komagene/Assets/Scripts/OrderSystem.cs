@@ -63,7 +63,7 @@ public class OrderSystem : MonoTimer
         currentOrders.Remove(toCloseOrder);
     }
 
-    private void CloseOrder(OrderSO toCloseOrder, bool waiterClose = true)
+    private void CloseOrder(OrderSO toCloseOrder, bool waiterClose)
     {
         currentOrders.Remove(toCloseOrder);
         onOrderClosed.Raise(toCloseOrder);
@@ -79,8 +79,13 @@ public class OrderSystem : MonoTimer
                 return;
             }
         }
+        FalseOrder();
     }
     
+    private void FalseOrder()
+    {
+
+    }
     
     
 }

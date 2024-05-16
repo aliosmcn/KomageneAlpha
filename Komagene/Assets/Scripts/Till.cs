@@ -17,10 +17,16 @@ public class Till : MonoBehaviour
     Rigidbody objRb;
     BoxCollider objCll;
 
+    Animator animator;
+    [SerializeField] private bool playerInside = false;
+
     void Start()
     {
         readyToSpawn = true;
-
+        if (GetComponent<Animator>())
+        {
+            animator = GetComponent<Animator>();
+        }
         switch (this.tag)
         { 
             case "DomatesSpawn":
@@ -62,6 +68,11 @@ public class Till : MonoBehaviour
                     break;
             }
         }
+        if (playerInside && Input.GetKeyDown(KeyCode.Space) && GetComponent<Animator>())
+        {
+            animator.SetBool("isTake", true);
+            Invoke(nameof(SetAnimationFalse), 0.625f);
+        }
     }
     
     void Spawn(GameObject nesne)
@@ -70,7 +81,7 @@ public class Till : MonoBehaviour
         {
             GameObject newObject;
             newObject = Instantiate(nesne);
-            newObject.transform.position = new Vector3(this.transform.position.x, transform.position.y + 0.15f);
+            newObject.transform.position = new Vector3(this.transform.position.x, transform.position.y + 0.15f, transform.position.z);
             newObject.transform.localScale = nesne.transform.localScale;
             newObject.transform.SetParent(transform);
             objCll = GetComponentInParent<BoxCollider>();
@@ -84,27 +95,37 @@ public class Till : MonoBehaviour
         {
             GameObject newObject;
             newObject = Instantiate(tabak);
-            newObject.transform.position = new Vector3(this.transform.position.x, transform.position.y + 1f, this.transform.position.z);
+            newObject.transform.position = new Vector3(this.transform.position.x, transform.position.y + 0.5f, this.transform.position.z);
             newObject.transform.localScale = tabak.transform.localScale;
             newObject.transform.SetParent(transform);
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == null)
+        if (other.gameObject.tag == null)
         {
             readyToSpawn = false;
         }
-        if (collision.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.Space))
+        if (other.gameObject.CompareTag("Player"))
         {
-            objCll.isTrigger = false;
-            objRb.useGravity = true;
+            playerInside = true;
+        }
+        
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        readyToSpawn = true;
+        if (other.CompareTag("Player"))
+        {
+            playerInside = false; // Karakter kutudan çýktý
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void SetAnimationFalse()
     {
-        readyToSpawn = true;
+        animator.SetBool("isTake", false);
     }
 }

@@ -32,7 +32,7 @@ public class PickAndDrop : MonoBehaviour
         }
             
     }
-
+    /*
     private void OnCollisionEnter(Collision collision)
     {
         
@@ -44,7 +44,7 @@ public class PickAndDrop : MonoBehaviour
             {
                 if (collision.gameObject.transform.childCount == 0)
                 {
-                    this.transform.position = new Vector3(collision.transform.position.x, collision.transform.position.y + 0.83f, collision.transform.position.z);
+                    this.transform.position = new Vector3(collision.transform.position.x, collision.transform.position.y + 0.40f, collision.transform.position.z);
                     this.transform.parent = collision.transform;
                     rb.constraints = RigidbodyConstraints.FreezeAll;
                     isChildOfTable = false;
@@ -52,5 +52,5 @@ public class PickAndDrop : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 }

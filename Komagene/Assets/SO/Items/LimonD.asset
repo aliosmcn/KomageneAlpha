@@ -15,3 +15,5 @@ MonoBehaviour:
   itemId: SD
   itemName: LimonD
   itemIcon: {fileID: 0}
+  prefab: {fileID: 4834897807264863685, guid: c437bae3f8c745740ac6a9afbb897d74, type: 3}
+  canSlice: 0

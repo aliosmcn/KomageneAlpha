@@ -4,9 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Tabak
-  - Domates
-  - Marul
   - TabakSpawn
   - DomatesSpawn
   - Masa
@@ -14,11 +11,12 @@ TagManager:
   - item
   - MarulSpawn
   - CigKofteSpawn
+  - Teslim
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Masa

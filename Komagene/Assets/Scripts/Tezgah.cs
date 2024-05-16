@@ -19,7 +19,7 @@ public class Tezgah : MonoBehaviour
         }
     }
     
-    public void setContainedObject(GameObject toContainObject)
+    public void SetContainedObject(GameObject toContainObject)
     {
         this.containedObject = toContainObject;
         Item item = toContainObject.GetComponent<Item>();
