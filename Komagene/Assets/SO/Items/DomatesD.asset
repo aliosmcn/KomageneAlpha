@@ -15,3 +15,5 @@ MonoBehaviour:
   itemId: DD
   itemName: DomatesD
   itemIcon: {fileID: 0}
+  prefab: {fileID: 4713507388276744817, guid: bbde9cd0b4dd8cd408f2495ab4ed3b1a, type: 3}
+  canSlice: 0

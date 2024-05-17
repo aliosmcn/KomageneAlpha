@@ -6,23 +6,23 @@ using static Unity.Burst.Intrinsics.Arm;
 
 public class Till : MonoBehaviour
 {
-    public bool readyToSpawn;
-
+    
     [Header("Prefabs")]
-    public GameObject domates;
-    public GameObject tabak;
-    public GameObject marul;
-    public GameObject cigKofte;
+    [SerializeField] private GameObject domates;
+    [SerializeField] private GameObject tabak;
+    [SerializeField] private GameObject marul;
+    [SerializeField] private GameObject cigKofte;
+    [SerializeField] private GameObject limon;
+    [SerializeField] private GameObject narEksisi;
 
     Rigidbody objRb;
     BoxCollider objCll;
 
     Animator animator;
-    [SerializeField] private bool playerInside = false;
+    private bool playerInside = false;
 
     void Start()
     {
-        readyToSpawn = true;
         if (GetComponent<Animator>())
         {
             animator = GetComponent<Animator>();
@@ -40,6 +40,9 @@ public class Till : MonoBehaviour
                 break;
             case "CigKofteSpawn":
                 Spawn(cigKofte);
+                break;
+            case "LimonSpawn":
+                Spawn(limon);
                 break;
             default:
                 break;
@@ -64,6 +67,9 @@ public class Till : MonoBehaviour
                 case "CigKofteSpawn":
                     Spawn(cigKofte);
                     break;
+                case "LimonSpawn":
+                    Spawn(limon);
+                    break;
                 default:
                     break;
             }
@@ -81,7 +87,7 @@ public class Till : MonoBehaviour
         {
             GameObject newObject;
             newObject = Instantiate(nesne);
-            newObject.transform.position = new Vector3(this.transform.position.x, transform.position.y + 0.15f, transform.position.z);
+            newObject.transform.position = new Vector3(this.transform.position.x, transform.position.y - 0.1f, transform.position.z);
             newObject.transform.localScale = nesne.transform.localScale;
             newObject.transform.SetParent(transform);
             objCll = GetComponentInParent<BoxCollider>();
@@ -103,10 +109,6 @@ public class Till : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == null)
-        {
-            readyToSpawn = false;
-        }
         if (other.gameObject.CompareTag("Player"))
         {
             playerInside = true;
@@ -117,7 +119,6 @@ public class Till : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        readyToSpawn = true;
         if (other.CompareTag("Player"))
         {
             playerInside = false; // Karakter kutudan çýktý

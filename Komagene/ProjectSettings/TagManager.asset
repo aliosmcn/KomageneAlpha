@@ -12,6 +12,8 @@ TagManager:
   - MarulSpawn
   - CigKofteSpawn
   - Teslim
+  - LimonSpawn
+  - NarEksisiSpawn
   layers:
   - Default
   - TransparentFX

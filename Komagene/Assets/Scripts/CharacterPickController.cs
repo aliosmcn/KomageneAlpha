@@ -111,7 +111,7 @@ public class CharacterPickController : Character
                     //TEZGAH BOŞSA
                     tezgah.SetContainedObject(containingObject);
 
-                    SetRbAndColliderActive(true);
+                    SetRbAndColliderActive(false);
                     containingObject.transform.parent = closestObjectManager.nearestObject.transform;
                     containingObject.transform.position = new Vector3(closestObjectManager.nearestObject.transform.position.x, closestObjectManager.nearestObject.transform.position.y + 0.40f, closestObjectManager.nearestObject.transform.position.z);
                     containingObject = null;

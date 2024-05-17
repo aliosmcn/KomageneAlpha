@@ -12,7 +12,12 @@ public class Combiner : MonoBehaviour
     GameObject temas;
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag != "item") return;
+        if (collision.gameObject.CompareTag("Masa"))
+        {
+            transform.parent = collision.gameObject.transform;
+            this.transform.position = new Vector3(collision.transform.position.x, collision.transform.position.y + 0.40f, collision.transform.position.z);
+        }
+        if (!collision.gameObject.CompareTag("item")) return;
         ItemSO itemso = collision.gameObject.GetComponent<Item>().ItemData;
         if (itemso.ItemID.StartsWith("T"))
         {
@@ -52,4 +57,5 @@ public class Combiner : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    
 }
