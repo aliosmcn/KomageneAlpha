@@ -18,7 +18,7 @@ public class DeliveryTable : MonoBehaviour
             onOrderDelivered.Raise(collision.gameObject.GetComponent<Item>().ItemData);
             collision.gameObject.tag = "Untagged";
             delivery = collision.gameObject;
-            Invoke(nameof(DestroyDelivery), 1.5f);
+            Invoke(nameof(DestroyDelivery), 0.5f);
         }
     }
 

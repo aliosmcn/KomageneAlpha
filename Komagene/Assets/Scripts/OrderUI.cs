@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Unity.VisualScripting;
 using UnityEngine;
-
-
+using UnityEngine.UI;
 
 public class OrderUI : MonoTimer
 {
@@ -13,29 +12,40 @@ public class OrderUI : MonoTimer
     [SerializeField] private OrderSOEvent onOrderTimeOut;
     
     
-    [SerializeField] private float orderTime = 3f; 
+    [SerializeField] private float orderTime = 25f; 
     [SerializeField] public OrderSO currentOrder;
 
-    LTRect uiItself;
+    [SerializeField] private Image fillImage;
+
+    private int elapsedTime = 0;
 
     void Start()
     {
-        
-        base.setRemainingTime(orderTime);
+        base.setRemainingTime(1f);
         base.StartTimer();
-        
         
     }
 
-    private void updateHeight(float newVal)
+    protected override void Update()
     {
-        
+        base.Update();
+        if (elapsedTime < orderTime)
+        {
+            
+            fillImage.fillAmount = 1f - (elapsedTime / orderTime);
+        }
+        else
+        {
+            onOrderTimeOut.Raise(currentOrder);
+            onOrderClosed.Raise(currentOrder);
+        }
     }
 
     protected override void TimeIsUp()
     {
-        onOrderTimeOut.Raise(currentOrder);
-        onOrderClosed.Raise(currentOrder);
+        elapsedTime += 1;
+        base.RestartTimer();
     }
+
 
 }

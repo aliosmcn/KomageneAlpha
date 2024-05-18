@@ -171,7 +171,6 @@ MonoBehaviour:
   onVerticalValueChanged: {fileID: 11400000, guid: 4da40a73be0170d488b3444653e7e031,
     type: 2}
   onSliceToggle: {fileID: 11400000, guid: e0c3d7ca1d0320e42bcc92e793b66065, type: 2}
-  walkDustEffect: {fileID: 0}
   onSpacePressed: {fileID: 11400000, guid: f86af2e44f78aba4cb33bf454b0a8405, type: 2}
   onOrderDelivered: {fileID: 11400000, guid: a680774471e53e6439f03474ddc41e4f, type: 2}
   containingObject: {fileID: 0}

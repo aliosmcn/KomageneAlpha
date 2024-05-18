@@ -12,7 +12,8 @@ public class OrderUIController : MonoBehaviour
     
     [SerializeField] private GameObject orderUIPrefab;
 
-    [SerializeField] private List<GameObject> orderUIs;
+    private List<GameObject> orderUIs = new List<GameObject>();
+    
 
     private void OnEnable()
     {
@@ -25,29 +26,35 @@ public class OrderUIController : MonoBehaviour
         onOrderCreated.RemoveListener(CreateOrderUI);
         onOrderClosed.RemoveListener(RemoveOrderFromUI);
     }
-
+    
     private void CreateOrderUI(OrderSO order)
     {
         Sprite recipeIcon = order.OrderRecipe.result.ItemIcon;
         orderUIPrefab.GetComponent<Image>().sprite = recipeIcon;
         orderUIPrefab.GetComponent<OrderUI>().currentOrder = order;
-        orderUIs.Add(Instantiate(orderUIPrefab, this.transform));
+        GameObject temp = Instantiate(orderUIPrefab, this.transform);
+        temp.name = Random.Range(1, 100).ToString();
+        orderUIs.Add(temp);
     }
-
-
+    
     private void RemoveOrderFromUI(OrderSO orderToClose)
     {
-        int removeInt = -1;
-        foreach(GameObject orderUi in orderUIs)
+        //ReverseList();
+        
+        int removeInt2 = -1;
+        foreach (GameObject orderUi in orderUIs)
         {
             OrderSO tempOseo = orderUi.GetComponent<OrderUI>().currentOrder;
-            if (tempOseo == orderToClose)
+            if (tempOseo.GetHashCode() == orderToClose.GetHashCode())
             {
-                removeInt = orderUIs.IndexOf(orderUi);                
+                removeInt2 = orderUIs.IndexOf(orderUi);
+                break;
             }
         }
-        GameObject tempObject = orderUIs[removeInt];
-        orderUIs.RemoveAt(removeInt);
+        GameObject tempObject = orderUIs[removeInt2];
         Destroy(tempObject);
+        orderUIs.RemoveAt(removeInt2);
+
+        
     }
 }

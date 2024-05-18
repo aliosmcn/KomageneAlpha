@@ -11,7 +11,7 @@ public class Slice : MonoBehaviour
 
 
     [SerializeField] private bool playerHere;
-
+    [SerializeField] private GameObject dustParticle;
 
     void Update()
     {
@@ -22,9 +22,10 @@ public class Slice : MonoBehaviour
     {
         if (playerHere && Input.GetKeyDown(KeyCode.LeftControl))
         {
-            if (this.transform.childCount > 0 && transform.GetChild(0).GetComponent<Item>().ItemData.CanSlice)
+            if (this.transform.childCount > 1 && transform.GetChild(1).GetComponent<Item>().ItemData.CanSlice)
             {
                 onSliceToggle.Raise();
+                dustParticle.SetActive(true);
                 Invoke(nameof(Destroy), 3f);
             }
         }
@@ -33,10 +34,11 @@ public class Slice : MonoBehaviour
     void Destroy()
     {
         onSliceToggle.Raise();
-        string newObjectID = transform.GetChild(0).GetComponent<Item>().ItemData.ItemID + "D";
+        dustParticle.SetActive(false);
+        string newObjectID = transform.GetChild(1).GetComponent<Item>().ItemData.ItemID + "D";
         CreateNewObject(newObjectID);
-        Debug.Log("BEFORE: " + transform.GetChild(0).GetComponent<Item>().ItemData.ItemID + "AFTER: " + newObjectID);
-        Destroy(transform.GetChild(0).gameObject);
+        Debug.Log("BEFORE: " + transform.GetChild(1).GetComponent<Item>().ItemData.ItemID + "AFTER: " + newObjectID);
+        Destroy(transform.GetChild(1).gameObject);
         
     }
 

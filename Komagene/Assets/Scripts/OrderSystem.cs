@@ -59,7 +59,6 @@ public class OrderSystem : MonoTimer
 
     public void CloseOrder(OrderSO toCloseOrder)
     {
-        
         currentOrders.Remove(toCloseOrder);
     }
 
