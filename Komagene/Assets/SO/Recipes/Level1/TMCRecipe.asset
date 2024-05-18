@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5554922a8693bc94388011fd07f44233, type: 3}
-  m_Name: R2
+  m_Name: TMCRecipe
   m_EditorClassIdentifier: 
   materials:
   - {fileID: 11400000, guid: 7ee39d4b6890c3f498100005a2e659da, type: 2}

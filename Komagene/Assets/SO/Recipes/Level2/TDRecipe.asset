@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5554922a8693bc94388011fd07f44233, type: 3}
-  m_Name: R1
+  m_Name: TDRecipe
   m_EditorClassIdentifier: 
   materials:
   - {fileID: 11400000, guid: e7319ccf705cb7a4a8ac0d5795f49e46, type: 2}
-  - {fileID: 11400000, guid: 777fc356564dcc540a8b9dc0864df764, type: 2}
-  result: {fileID: 11400000, guid: 7ee39d4b6890c3f498100005a2e659da, type: 2}
+  - {fileID: 11400000, guid: 10d732d34a5ffd94d8ab115b9075c2d7, type: 2}
+  result: {fileID: 11400000, guid: 77699a3914c3b4f4abe6b3c815c65fa2, type: 2}
+  sliceableRecipe: 0

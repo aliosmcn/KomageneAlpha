@@ -11,7 +11,7 @@ public class Slice : MonoBehaviour
 
 
     [SerializeField] private bool playerHere;
-    
+
 
     void Update()
     {
@@ -25,7 +25,7 @@ public class Slice : MonoBehaviour
             if (this.transform.childCount > 0 && transform.GetChild(0).GetComponent<Item>().ItemData.CanSlice)
             {
                 onSliceToggle.Raise();
-                Invoke(nameof(Destroy), 4f);
+                Invoke(nameof(Destroy), 3f);
             }
         }
     }

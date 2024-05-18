@@ -12,7 +12,7 @@ public abstract class Character : MonoBehaviour
     [SerializeField] private FloatEvent onHorizontalValueChanged;
     [SerializeField] private FloatEvent onVerticalValueChanged;
     [SerializeField] private VoidEvent onSliceToggle;
-
+    
     private Animator animator;
     private Rigidbody rb; // Karakterin Rigidbody bileþeni
 
@@ -93,6 +93,7 @@ public abstract class Character : MonoBehaviour
         canMove = !canMove;
         movement = Vector3.zero;
         animator.SetBool("IsWalk", false);
+        animator.SetBool("isSlice", !animator.GetBool("isSlice"));
     }
 
 }

@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5554922a8693bc94388011fd07f44233, type: 3}
-  m_Name: R3
+  m_Name: TMSRecipe1
   m_EditorClassIdentifier: 
   materials:
-  - {fileID: 11400000, guid: e7319ccf705cb7a4a8ac0d5795f49e46, type: 2}
-  - {fileID: 11400000, guid: fd1c77ca864a2db40b352bbb2bf6d1e0, type: 2}
-  result: {fileID: 11400000, guid: 1931d4f5028d8e5468d6e9ce3f8b7a2b, type: 2}
+  - {fileID: 11400000, guid: f636897d8389190498407a99aa906572, type: 2}
+  - {fileID: 11400000, guid: 777fc356564dcc540a8b9dc0864df764, type: 2}
+  result: {fileID: 11400000, guid: 24e6c32649975374080c0ac7a809acd8, type: 2}
+  sliceableRecipe: 0
