@@ -443,6 +443,7 @@
 "Assets/Scripts/ScriptableObjects/DataContainers/ItemSO.cs"
 "Assets/Scripts/ScriptableObjects/DataContainers/OrderSO.cs"
 "Assets/Scripts/ScriptableObjects/Events/FloatEvent.cs"
+"Assets/Scripts/ScriptableObjects/Events/IntEvent.cs"
 "Assets/Scripts/ScriptableObjects/Events/ItemSOEvent.cs"
 "Assets/Scripts/ScriptableObjects/Events/OrderSOEvent.cs"
 "Assets/Scripts/ScriptableObjects/Events/VoidEvent.cs"

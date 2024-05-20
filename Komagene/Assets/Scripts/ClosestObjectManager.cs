@@ -5,14 +5,19 @@ using UnityEngine;
 
 public class ClosestObjectManager : MonoBehaviour
 {
+    [SerializeField] private IntEvent onNearestObjectFound;
 
+    [SerializeField] private Material focusHighlight;
     [SerializeField] private float radius = 1.3f;
+
+    [SerializeField] private Material unFocusedMaterial;
 
     public GameObject nearestObject = null;
 
     [SerializeField] LayerMask mask;
 
     private static ClosestObjectManager instance;
+    
 
     public static ClosestObjectManager Instance
     {
@@ -44,17 +49,21 @@ public class ClosestObjectManager : MonoBehaviour
             if (distance < nearestDistance)
             {
                 nearestDistance = distance;
-                nearestCollider = hitCollider;
-            }
+                nearestCollider = hitCollider;            
+            }          
         }
 
         if (nearestCollider != null)
         {
             nearestObject = nearestCollider.gameObject;
+            //focusHighlight.SetFloat("_deger", 2);
+            if (nearestObject.tag != "Teslim")
+            {
+                nearestObject.GetComponent<MeshRenderer>().sharedMaterial = focusHighlight;
+                onNearestObjectFound.Raise(nearestObject.GetHashCode());
+
+            }
         }
-        else
-        {
-            nearestObject = null;
-        }
+   
     }
 }

@@ -16,12 +16,12 @@ public class OrderUI : MonoTimer
     [SerializeField] public OrderSO currentOrder;
 
     [SerializeField] private Image fillImage;
-    
-    private float elapsedTime = 0f;
+
+    [SerializeField] private float elapsedTime = 0f;
 
     void Start()
     {
-        base.setRemainingTime(1f);
+        base.setRemainingTime(0.01f);
         base.StartTimer();
     }
 
@@ -41,7 +41,7 @@ public class OrderUI : MonoTimer
 
     protected override void TimeIsUp()
     {
-        elapsedTime += 1;
+        elapsedTime += 0.01f;
         base.RestartTimer();
     }
 

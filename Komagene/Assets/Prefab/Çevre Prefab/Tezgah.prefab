@@ -26,7 +26,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a05dbe3aa2bd96149a8997ab90bc3bdf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: -5.025665
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a05dbe3aa2bd96149a8997ab90bc3bdf,
         type: 3}
@@ -36,12 +36,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a05dbe3aa2bd96149a8997ab90bc3bdf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: -4.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a05dbe3aa2bd96149a8997ab90bc3bdf,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071079
+      value: -0.70710367
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a05dbe3aa2bd96149a8997ab90bc3bdf,
         type: 3}
@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a05dbe3aa2bd96149a8997ab90bc3bdf,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.70710576
+      value: -0.70711
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a05dbe3aa2bd96149a8997ab90bc3bdf,
         type: 3}
@@ -66,13 +66,19 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a05dbe3aa2bd96149a8997ab90bc3bdf,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
+      value: -269.999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a05dbe3aa2bd96149a8997ab90bc3bdf,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a05dbe3aa2bd96149a8997ab90bc3bdf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -3522955778539423533, guid: a05dbe3aa2bd96149a8997ab90bc3bdf,
+        type: 3}
     - target: {fileID: 919132149155446097, guid: a05dbe3aa2bd96149a8997ab90bc3bdf,
         type: 3}
       propertyPath: m_Name
@@ -140,4 +146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d04e6229da5614db186997747fc597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onNearestObjectFound: {fileID: 11400000, guid: 1101951e244a7ea4b911a35d8f389151,
+    type: 2}
   containedObject: {fileID: 0}
+  focusedMaterial: {fileID: -876546973899608171, guid: ef05c6146ba918743b3e1e01ca8235c2,
+    type: 3}
+  unFocusedMaterial: {fileID: -3522955778539423533, guid: a05dbe3aa2bd96149a8997ab90bc3bdf,
+    type: 3}
