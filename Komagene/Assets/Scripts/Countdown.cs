@@ -4,55 +4,62 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor;
 
-public class Countdown : MonoBehaviour
+public class Countdown : MonoTimer
 {
-    public TextMeshProUGUI timerText;   //zaman texti
-    public Image timerImg;              //timer fotosu
-    public int currentTime;           //kalan zaman
-    public int duration;              //toplam zamna
+    [Header("Events")]
+    [SerializeField] private VoidEvent onTimeFinished;
 
-    int kalanDk;                      // toplam zamanýn 60a bölümünden kalan
+    [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private Image timerImg;
+    [SerializeField] private int currentTime;
+    [SerializeField] private int duration;              
+
 
     string hile = "";
 
     void Start()
     {
-        currentTime = duration;
-        timerText.text = currentTime.ToString();
-        StartCoroutine(UpdateTime());
+        base.SetRemainingTime(1f);
+        base.StartTimer();
     }
 
-    private IEnumerator UpdateTime()
+    protected override void Update()
     {
-        while (currentTime >= 0)
+        base.Update();
+        if (currentTime < duration)
         {
             timerImg.fillAmount = Mathf.InverseLerp(0, duration, currentTime);
-            kalanDk = currentTime / 60;
-
-            timerText.text = kalanDk.ToString("00") + ":" + (currentTime % 60).ToString("00");
-            
-            yield return new WaitForSeconds(1f);
-            if (currentTime!=0)
-            {
-                currentTime--;
-            }
+            timerText.text = (currentTime / 60).ToString("00") + ":" + (currentTime % 60).ToString("00");
         }
-        yield return null;
+        if (currentTime <= 0)
+        {
+            onTimeFinished.Raise();
+            base.StopTimer();
+            currentTime = 50;
+            base.PauseTimer();
+        }
+        Hile();
     }
-    private void Update()
+    protected override void TimeIsUp()
+    {
+        currentTime -= 1;
+        base.RestartTimer();
+    }
+    private void Hile()
     {
         if (Input.anyKeyDown)
         {
             hile += Input.inputString;
 
-            
+
             if (hile == "aliosman")
             {
-                currentTime += 30;      
-                
+                currentTime += 30;
 
-                hile = "";          
+
+                hile = "";
             }
 
             if (Input.GetKeyDown(KeyCode.Return))
@@ -61,4 +68,5 @@ public class Countdown : MonoBehaviour
             }
         }
     }
+
 }

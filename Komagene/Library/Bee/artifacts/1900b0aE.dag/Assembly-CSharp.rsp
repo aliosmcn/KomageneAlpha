@@ -436,6 +436,7 @@
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/InputManager.cs"
 "Assets/Scripts/Item.cs"
+"Assets/Scripts/MenuManager.cs"
 "Assets/Scripts/MonoTimer.cs"
 "Assets/Scripts/OrderSystem.cs"
 "Assets/Scripts/OrderUI.cs"

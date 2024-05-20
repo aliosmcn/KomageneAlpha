@@ -21,7 +21,7 @@ public class OrderUI : MonoTimer
 
     void Start()
     {
-        base.setRemainingTime(0.01f);
+        base.SetRemainingTime(0.01f);
         base.StartTimer();
     }
 

@@ -31,7 +31,7 @@ public abstract class MonoTimer : MonoBehaviour
     /// kronometrenin ne kadar sürede çalışacağı
     /// belirlenmiş olur.
     /// <param name="remTime"></param>
-    protected void setRemainingTime(float remTime)
+    protected void SetRemainingTime(float remTime)
     {
         this.settedTime = remTime;
         this.remainingTime = remTime;

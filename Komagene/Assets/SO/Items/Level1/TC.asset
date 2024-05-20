@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TC
   m_EditorClassIdentifier: 
   itemId: TC
-  itemName: tabakCig
+  itemName: Sade Porsiyon
   itemIcon: {fileID: 21300000, guid: 5991d48333eeac34e8d8559f97e12443, type: 3}
   prefab: {fileID: 1377656797325986041, guid: c311c09419f5380498872f3c21c36c3f, type: 3}
+  canSlice: 0

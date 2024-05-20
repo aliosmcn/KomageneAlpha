@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TMCS
   m_EditorClassIdentifier: 
   itemId: TMCS
-  itemName: TabakMarulCigkofteLimon
+  itemName: Marullu Limonlu Porsiyon
   itemIcon: {fileID: 21300000, guid: a19fc5c8a3255dc4aa36d929ace351ea, type: 3}
   prefab: {fileID: 4451304700468187361, guid: 105247c26f3ab004faa873d9a907e697, type: 3}
   canSlice: 0

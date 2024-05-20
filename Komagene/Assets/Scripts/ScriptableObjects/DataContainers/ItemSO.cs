@@ -17,7 +17,7 @@ public class ItemSO : ScriptableObject
         }
     }
 
-    [SerializeField] private string itemName;
+    [SerializeField] public string itemName;
     [SerializeField] private Sprite itemIcon;
 
     public Sprite ItemIcon

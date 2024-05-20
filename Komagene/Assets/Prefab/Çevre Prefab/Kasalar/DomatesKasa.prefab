@@ -61,7 +61,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c9add96b464d6fc4ab38fd007d95a31c,
         type: 3}
       propertyPath: m_Name
-      value: DomatesKasaa
+      value: DomatesKasa
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c9add96b464d6fc4ab38fd007d95a31c,
         type: 3}
@@ -190,6 +190,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9a508689d6e9747a0d89e2ce0fba2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onMoneyValueChanged: {fileID: 11400000, guid: bc070252f621f934ab4b51b8271f20e3,
+    type: 2}
+  onItemPicked: {fileID: 11400000, guid: 35d278cb241f6224da31cb3bc95af1ad, type: 2}
   domates: {fileID: 2302528548082591056, guid: cce4533d2b364db46bbdaf7bb80231f3, type: 3}
   tabak: {fileID: 3563417520154214018, guid: 0da5a59543868ae4291c024129358ed1, type: 3}
   marul: {fileID: 524595435805484331, guid: be6d4b536d391f34788a64147e8630fb, type: 3}

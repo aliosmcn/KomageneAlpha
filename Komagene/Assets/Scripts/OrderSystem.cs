@@ -45,7 +45,7 @@ public class OrderSystem : MonoTimer
     private void Start()
     {
 
-        base.setRemainingTime(orderTime);
+        base.SetRemainingTime(orderTime);
         base.StartTimer();
     }
 
