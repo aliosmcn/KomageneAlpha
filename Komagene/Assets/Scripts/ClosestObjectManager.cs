@@ -6,7 +6,7 @@ using UnityEngine;
 public class ClosestObjectManager : MonoBehaviour
 {
 
-    [SerializeField] private float radius = 1.2f;
+    [SerializeField] private float radius = 1.3f;
 
     public GameObject nearestObject = null;
 

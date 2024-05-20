@@ -22,7 +22,10 @@ public class OrderSystem : MonoTimer
     [SerializeField] private int maxOrderCount = 3;
     // Gelmiş orderlar
     [SerializeField] private List<OrderSO> currentOrders = new List<OrderSO>();
-    
+
+    [SerializeField] private ParticleSystem orderCorrectParticle;
+    [SerializeField] private ParticleSystem orderFalseParticle;
+
     private void OnEnable()
     {
         onOrderTimeOut.AddListener(CloseOrder);
@@ -75,6 +78,7 @@ public class OrderSystem : MonoTimer
             if (order.OrderRecipe.result == deliveredMeal)
             {
                 CloseOrder(order, true);
+                orderCorrectParticle.Play();
                 return;
             }
         }
@@ -83,7 +87,7 @@ public class OrderSystem : MonoTimer
     
     private void FalseOrder()
     {
-
+        orderFalseParticle.Play();
     }
     
     

@@ -37,7 +37,6 @@ public class Slice : MonoBehaviour
         dustParticle.SetActive(false);
         string newObjectID = transform.GetChild(1).GetComponent<Item>().ItemData.ItemID + "D";
         CreateNewObject(newObjectID);
-        Debug.Log("BEFORE: " + transform.GetChild(1).GetComponent<Item>().ItemData.ItemID + "AFTER: " + newObjectID);
         Destroy(transform.GetChild(1).gameObject);
         
     }

@@ -23,7 +23,10 @@ public class Tezgah : MonoBehaviour
     {
         this.containedObject = toContainObject;
         Item item = toContainObject.GetComponent<Item>();
-        
+        if (GetComponent<DeliveryTable>())
+        {
+            GetComponent<DeliveryTable>().Delivery(toContainObject);
+        }
     }
 
     
