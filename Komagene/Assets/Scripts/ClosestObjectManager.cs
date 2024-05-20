@@ -52,7 +52,7 @@ public class ClosestObjectManager : MonoBehaviour
                 nearestCollider = hitCollider;
                 
             }
-            if (hitCollider.gameObject.tag != "Teslim" && hitCollider.gameObject.tag != "DogramaTahtasi")
+            if (hitCollider.gameObject.tag == "Masa")
             {
                 hitCollider.gameObject.GetComponent<MeshRenderer>().sharedMaterial = unFocusedMaterial;
             }
@@ -62,7 +62,7 @@ public class ClosestObjectManager : MonoBehaviour
         if (nearestCollider != null)
         {
             nearestObject = nearestCollider.gameObject;
-            if (nearestObject.tag != "Teslim" && nearestObject.tag != "DogramaTahtasi")
+            if (nearestObject.gameObject.tag == "Masa")
             {
                 nearestCollider.gameObject.GetComponent<MeshRenderer>().sharedMaterial = focusedMaterial;
             }
@@ -80,7 +80,7 @@ public class ClosestObjectManager : MonoBehaviour
                 nearestObject.GetComponent<MeshRenderer>().sharedMaterial = unFocusedMaterial;
             }*/
             
-            if (nearestObject != null && nearestObject.tag != "Teslim" && nearestObject.tag != "DogramaTahtasi")
+            if (nearestObject != null && nearestObject.gameObject.tag == "Masa")
             {
                 nearestObject.GetComponent<MeshRenderer>().sharedMaterial = unFocusedMaterial;
             }

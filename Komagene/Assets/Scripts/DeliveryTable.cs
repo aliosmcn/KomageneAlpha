@@ -35,18 +35,6 @@ public class DeliveryTable : MonoBehaviour
     {
         animator.SetBool("delivery", false);
     }
-    /*
-    private void OnCollisionEnter(Collision collision)
-    {
-        //TESLÝME KONULAN OBJE BOÞ TABAK DEÐÝLSE YOK EDECEK
-        if (collision.gameObject.GetComponent<Combiner>() && collision.gameObject.GetComponent<Item>().ItemData.ItemID != "T")
-        {
-            onOrderDelivered.Raise(collision.gameObject.GetComponent<Item>().ItemData);
-            collision.gameObject.tag = "Untagged";
-            delivery = collision.gameObject;
-            Invoke(nameof(DestroyDelivery), 0.5f);
-        }
-    }*/
     public void Delivery(GameObject deliveryObject)
     {
         if (deliveryObject)
@@ -58,7 +46,6 @@ public class DeliveryTable : MonoBehaviour
                 GetComponent<Tezgah>().ContainedObject = null;
                 Invoke(nameof(DestroyDelivery), 0.5f);
             }
-            
         }
     }
 

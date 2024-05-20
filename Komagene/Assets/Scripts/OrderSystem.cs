@@ -6,25 +6,29 @@ using Random = UnityEngine.Random;
 
 public class OrderSystem : MonoTimer
 {
-
+    [Header("Events")]
     [SerializeField] private OrderSOEvent onOrderTimeOut;
     [SerializeField] private OrderSOEvent onOrderCreated;
     [SerializeField] private ItemSOEvent onOrderDelivered; //bu teslim tezgahında raise edilecek
     [SerializeField] private OrderSOEvent onOrderClosed;
-    
+    [SerializeField] private IntEvent onMoneyValueChanged;
+
+    [Header("Particles")]
+    [SerializeField] private ParticleSystem orderCorrectParticle;
+    [SerializeField] private ParticleSystem orderFalseParticle;
+
+    // Gelebilecek butun orderlar
+    [SerializeField] private List<OrderSO> Orders;
+    //Order gelme sureleri ve sayısal degerler
+    [SerializeField] private float orderTime = 3f;
+    [SerializeField] private int maxOrderCount = 3;
     int randomOrderIndex;
 
-    // Gelebilecek bütün orderlar
-    [SerializeField] private List<OrderSO> Orders;
-
-    [SerializeField] private float orderTime = 3f;
-
-    [SerializeField] private int maxOrderCount = 3;
     // Gelmiş orderlar
     [SerializeField] private List<OrderSO> currentOrders = new List<OrderSO>();
 
-    [SerializeField] private ParticleSystem orderCorrectParticle;
-    [SerializeField] private ParticleSystem orderFalseParticle;
+    public int money;
+    
 
     private void OnEnable()
     {
@@ -63,6 +67,7 @@ public class OrderSystem : MonoTimer
     public void CloseOrder(OrderSO toCloseOrder)
     {
         currentOrders.Remove(toCloseOrder);
+        onMoneyValueChanged.Raise(-20);
     }
 
     private void CloseOrder(OrderSO toCloseOrder, bool waiterClose)
@@ -78,17 +83,23 @@ public class OrderSystem : MonoTimer
             if (order.OrderRecipe.result == deliveredMeal)
             {
                 CloseOrder(order, true);
-                orderCorrectParticle.Play();
+                TrueOrder();
                 return;
             }
         }
         FalseOrder();
     }
-    
+
+    private void TrueOrder()
+    {
+        onMoneyValueChanged.Raise(100);
+        orderCorrectParticle.Play();
+    }
     private void FalseOrder()
     {
+        onMoneyValueChanged.Raise(-20);
         orderFalseParticle.Play();
     }
     
-    
+
 }

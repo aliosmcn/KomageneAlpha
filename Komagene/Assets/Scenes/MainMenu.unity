@@ -494,7 +494,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AYARLAR
+  m_Text: "Hakk\u0131nda"
 --- !u!222 &487224063
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -696,7 +696,6 @@ GameObject:
   - component: {fileID: 1177944381}
   - component: {fileID: 1177944380}
   - component: {fileID: 1177944379}
-  - component: {fileID: 1177944384}
   - component: {fileID: 1177944385}
   m_Layer: 5
   m_Name: Basla
@@ -819,18 +818,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177944377}
   m_CullTransparentMesh: 1
---- !u!114 &1177944384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1177944377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88df46ee8cd5cc84f91ba5e46391a9a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1177944385
 Animator:
   serializedVersion: 5
@@ -983,7 +970,7 @@ GameObject:
   - component: {fileID: 1911552599}
   - component: {fileID: 1911552598}
   m_Layer: 5
-  m_Name: Ayarlar
+  m_Name: "Hakk\u0131nda"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -168,10 +168,10 @@ MonoBehaviour:
   onOrderCreated: {fileID: 11400000, guid: d618544d023845647aa26adc70d68865, type: 2}
   onOrderClosed: {fileID: 11400000, guid: 5cb2dccda852c064bbf3cd8f7f0280f4, type: 2}
   onOrderTimeOut: {fileID: 11400000, guid: 771c8b3c7414af84f809cde51acbe999, type: 2}
-  orderTime: 10
+  orderTime: 25
   currentOrder: {fileID: 11400000, guid: 1c91b36be2ee075418c4809938688c9d, type: 2}
   fillImage: {fileID: 3520662204780736145}
-  duration: 10
+  elapsedTime: 0
 --- !u!114 &1897084777630543286
 MonoBehaviour:
   m_ObjectHideFlags: 0
