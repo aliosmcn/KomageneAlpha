@@ -7,10 +7,10 @@ public class ClosestObjectManager : MonoBehaviour
 {
     [SerializeField] private IntEvent onNearestObjectFound;
 
-    [SerializeField] private Material focusHighlight;
-    [SerializeField] private float radius = 1.3f;
-
     [SerializeField] private Material unFocusedMaterial;
+    [SerializeField] private Material focusedMaterial;
+
+    [SerializeField] private float radius = 1.3f;
 
     public GameObject nearestObject = null;
 
@@ -49,21 +49,43 @@ public class ClosestObjectManager : MonoBehaviour
             if (distance < nearestDistance)
             {
                 nearestDistance = distance;
-                nearestCollider = hitCollider;            
-            }          
+                nearestCollider = hitCollider;
+                
+            }
+            if (hitCollider.gameObject.tag != "Teslim" && hitCollider.gameObject.tag != "DogramaTahtasi")
+            {
+                hitCollider.gameObject.GetComponent<MeshRenderer>().sharedMaterial = unFocusedMaterial;
+            }
         }
 
+        // BÝ OBJE GÝRDÝ
         if (nearestCollider != null)
         {
             nearestObject = nearestCollider.gameObject;
-            //focusHighlight.SetFloat("_deger", 2);
-            if (nearestObject.tag != "Teslim")
+            if (nearestObject.tag != "Teslim" && nearestObject.tag != "DogramaTahtasi")
+            {
+                nearestCollider.gameObject.GetComponent<MeshRenderer>().sharedMaterial = focusedMaterial;
+            }
+            /*
+            if (nearestObject.tag != "Teslim" && nearestObject.tag != "DogramaTahtasi")
             {
                 nearestObject.GetComponent<MeshRenderer>().sharedMaterial = focusHighlight;
-                onNearestObjectFound.Raise(nearestObject.GetHashCode());
-
             }
+            return;*/
         }
-   
+        else // HÝÇ OBJE YOK
+        {/*
+            if (nearestObject != null && nearestObject.tag != "Teslim" && nearestObject.tag != "DogramaTahtasi")
+            {
+                nearestObject.GetComponent<MeshRenderer>().sharedMaterial = unFocusedMaterial;
+            }*/
+            
+            if (nearestObject != null && nearestObject.tag != "Teslim" && nearestObject.tag != "DogramaTahtasi")
+            {
+                nearestObject.GetComponent<MeshRenderer>().sharedMaterial = unFocusedMaterial;
+            }
+            nearestObject = null;
+        }
+
     }
 }

@@ -75,6 +75,7 @@ public class CharacterPickController : Character
             else //MASAYA BIRAK
             {
                 tezgah = closestObjectManager.nearestObject.GetComponent<Tezgah>();
+                Vector3 spawnPos = new Vector3(closestObjectManager.nearestObject.transform.position.x, closestObjectManager.nearestObject.transform.position.y + 0.40f, closestObjectManager.nearestObject.transform.position.z);
                 if (tezgah.ContainedObject != null)
                 {
                     //*  tezgahtaki obje combiner sınıfını ve bırakmak istediğimiz obje combiner sınıfını taşıyor mu ?
@@ -87,21 +88,21 @@ public class CharacterPickController : Character
                     {
                         return;
                     }
-
+                    //tezgahtaki tabak
                     if (tezgah.ContainedObject.GetComponent<Combiner>())
                     {
                         Combiner c = tezgah.ContainedObject.GetComponent<Combiner>();
-                        if (c.SearchRecipe2(containingObject.GetComponent<Item>().ItemData.ItemID))
+                        if (c.SearchRecipe2(containingObject.GetComponent<Item>().ItemData.ItemID, spawnPos))
                         {
                             Destroy(containingObject);
                         }
                         return;
                     }
-                    
+                    //elimdeki tabak
                     if (containingObject.GetComponent<Combiner>())
                     {
                         Combiner c = containingObject.GetComponent<Combiner>();
-                        c.SearchRecipe2(tezgah.ContainedObject.GetComponent<Item>().ItemData.ItemID);
+                        c.SearchRecipe2(tezgah.ContainedObject.GetComponent<Item>().ItemData.ItemID, spawnPos);
                         return;
                     }
 

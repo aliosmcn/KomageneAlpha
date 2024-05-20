@@ -7,7 +7,6 @@ using static UnityEditor.Progress;
 
 public class Combiner : MonoBehaviour
 {
-
     [SerializeField] private ItemSO currentPlateObject;
     GameObject temas;
     private void OnCollisionEnter(Collision collision)
@@ -27,15 +26,15 @@ public class Combiner : MonoBehaviour
         SearchRecipe(itemso.ItemID);
     }
     
-    public bool SearchRecipe2(string itemid)
+    public bool SearchRecipe2(string itemid, Vector3 spawnPos)
     {
         ItemSO toCraftitemSO = CraftingMech.Instance.SearchRecipes(itemid, currentPlateObject.ItemID);
         if (toCraftitemSO == null) return false;
-        CreateNewItemFromRecipe(toCraftitemSO);
+        CreateNewItemFromRecipe(toCraftitemSO, spawnPos);
         return true;
     }
 
-    private void CreateNewItemFromRecipe(ItemSO toCreateObject)
+    private void CreateNewItemFromRecipe(ItemSO toCreateObject, Vector3 spawnPos)
     {
         GameObject toInstantiate = Instantiate(toCreateObject.prefab);
         if (ClosestObjectManager.Instance.nearestObject.GetComponent<Tezgah>().ContainedObject != null)
@@ -43,7 +42,7 @@ public class Combiner : MonoBehaviour
             Destroy(ClosestObjectManager.Instance.nearestObject.GetComponent<Tezgah>().ContainedObject);
         }
         ClosestObjectManager.Instance.nearestObject.GetComponent<Tezgah>().ContainedObject = toInstantiate;
-        toInstantiate.transform.position = transform.position;
+        toInstantiate.transform.position = spawnPos;
         Destroy(gameObject);
     }
 
