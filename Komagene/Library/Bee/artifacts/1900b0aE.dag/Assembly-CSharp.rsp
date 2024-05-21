@@ -425,6 +425,7 @@
 "Assets/LeanTween/Testing/TestingSceneSwitching.cs"
 "Assets/LeanTween/Testing/TestingSequencer.cs"
 "Assets/Scripts/BaseClass.cs"
+"Assets/Scripts/CameraFollow.cs"
 "Assets/Scripts/Character.cs"
 "Assets/Scripts/CharacterPickController.cs"
 "Assets/Scripts/ClosestObjectManager.cs"

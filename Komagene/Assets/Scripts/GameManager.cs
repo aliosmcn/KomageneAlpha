@@ -54,13 +54,11 @@ public class GameManager : MonoBehaviour
     private void AddOrderList(ItemSO order)
     {
         deliveredOrders.Add(order.itemName);
-        Debug.Log(deliveredOrders[0]);
     }
 
 
     private void TimeFinished()
     {
-        Debug.Log("zaman bitti");
         finishPanel.SetActive(true);
         hasilatText.text = money.ToString();
         for (int i = 0; i < deliveredOrders.Count; i++)

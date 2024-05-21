@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class ClosestObjectManager : MonoBehaviour
 {
-    [SerializeField] private IntEvent onNearestObjectFound;
 
     [SerializeField] private Material unFocusedMaterial;
     [SerializeField] private Material focusedMaterial;
@@ -18,7 +17,6 @@ public class ClosestObjectManager : MonoBehaviour
 
     private static ClosestObjectManager instance;
     
-
     public static ClosestObjectManager Instance
     {
         get
@@ -26,7 +24,6 @@ public class ClosestObjectManager : MonoBehaviour
             return instance;
         }
     }
-
     private void Awake()
     {
         instance = this;
@@ -55,6 +52,7 @@ public class ClosestObjectManager : MonoBehaviour
             if (hitCollider.gameObject.tag == "Masa")
             {
                 hitCollider.gameObject.GetComponent<MeshRenderer>().sharedMaterial = unFocusedMaterial;
+                FindAnyObjectByType<Tezgah>().gameObject.GetComponent<MeshRenderer>().sharedMaterial = unFocusedMaterial;
             }
         }
 
