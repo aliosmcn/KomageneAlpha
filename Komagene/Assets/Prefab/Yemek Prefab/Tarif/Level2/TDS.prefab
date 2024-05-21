@@ -61,7 +61,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5e207faef8bb8604c8221abf2b6ecfbc,
         type: 3}
       propertyPath: m_Name
-      value: TabakDomatesLimon
+      value: TDS
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5e207faef8bb8604c8221abf2b6ecfbc,
         type: 3}
@@ -145,7 +145,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &5012736736036661251
 MonoBehaviour:
