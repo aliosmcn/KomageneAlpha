@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: CigKofte
   m_EditorClassIdentifier: 
   itemId: C
-  itemName: CigKofte
+  itemName: "\xC7i\u011F K\xF6fte"
   itemIcon: {fileID: 0}
   prefab: {fileID: 5634890108088473093, guid: 9a0ca0828331dba4990ae727daccfc2d, type: 3}
+  canSlice: 0

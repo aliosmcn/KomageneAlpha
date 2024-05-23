@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEditor;
+using Unity.VisualScripting;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,16 +17,18 @@ public class GameManager : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private GameObject finishPanel;
+    [SerializeField] private Text itemsText;
     [SerializeField] private Text hasilatText;
     [SerializeField] private Text ordersText;
 
 
-    List<GameObject> foods = new List<GameObject>();
+    //List<GameObject> foods = new List<GameObject>();
     List<string> deliveredOrders = new List<string>();
-
+    List<string> pickedItems = new List<string>();
     public int money;
 
-    
+    Dictionary<string, int> itemCounts = new Dictionary<string, int>();
+    Dictionary<string, int> orderCounts = new Dictionary<string, int>();
 
     private void OnEnable()
     {
@@ -48,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     private void AddItemList(ItemSO item)
     {
-        foods.Add(item.prefab);
+        pickedItems.Add(item.itemName);
     }
 
     private void AddOrderList(ItemSO order)
@@ -60,14 +64,46 @@ public class GameManager : MonoBehaviour
     private void TimeFinished()
     {
         finishPanel.SetActive(true);
+
+        if (money >= 0) hasilatText.color = Color.green;
+        else hasilatText.color = Color.red;
+
         hasilatText.text = money.ToString();
-        for (int i = 0; i < deliveredOrders.Count; i++)
+        //TESLÝM EDÝLEN SÝPARÝÞLERÝ YAZDIR
+        foreach (string item in deliveredOrders)
         {
-            ordersText.text += " - " + deliveredOrders[i] + "\n";
+            if (orderCounts.ContainsKey(item))
+            {
+                orderCounts[item]++;
+            }
+            else
+            {
+                orderCounts[item] = 1;
+            }
+        }
+        foreach (KeyValuePair<string, int> kvp in orderCounts)
+        {
+            ordersText.text += $"{kvp.Key} x {kvp.Value}" + "\n";
+        }
+        //KULLANILAN ITEMLARI YAZDIR
+        foreach (string item in pickedItems)
+        {
+            if (itemCounts.ContainsKey(item))
+            {
+                itemCounts[item]++;
+            }
+            else
+            {
+                itemCounts[item] = 1;
+            }
+        }
+        foreach (KeyValuePair<string, int> kvp in itemCounts)
+        {
+            itemsText.text += $"{kvp.Key} x {kvp.Value}" + "\n";
         }
     }
 
-    
+
     private void Update()
     {
         if (finishPanel.activeSelf)
