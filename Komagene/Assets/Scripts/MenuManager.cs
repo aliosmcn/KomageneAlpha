@@ -7,15 +7,13 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private Animator gecisAnim;
-    [SerializeField] private GameObject animPanel;
     [SerializeField] private GameObject scoreBoardPanel;
     [SerializeField] private GameObject playerNamePanel;
     [SerializeField] private InputField inputField;
 
+    public string isim;
     public void BaslaButton()
     {
-        animPanel.SetActive(true);
         playerNamePanel.SetActive(true);
         inputField.onEndEdit.AddListener(OnInputFieldEndEdit);
     }
@@ -34,8 +32,9 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
     private void OnInputFieldEndEdit(string input)
     {
-        string name = input;
+        isim = input;
     }
 }

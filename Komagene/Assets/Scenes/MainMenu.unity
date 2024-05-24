@@ -419,7 +419,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 41410213}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 558603761}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: StartLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &41410213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,7 +668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &271211514
 RectTransform:
   m_ObjectHideFlags: 0
@@ -998,11 +1010,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53a433b872ebce4da304635c081c88b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gecisAnim: {fileID: 0}
-  animPanel: {fileID: 0}
   scoreBoardPanel: {fileID: 0}
-  playerNamePanel: {fileID: 0}
-  inputField: {fileID: 0}
+  playerNamePanel: {fileID: 271211513}
+  inputField: {fileID: 793388129}
+  isim: 
 --- !u!1 &793388127
 GameObject:
   m_ObjectHideFlags: 0
