@@ -9,7 +9,9 @@ using UnityEditor;
 public class Countdown : MonoTimer
 {
     [Header("Events")]
+    [SerializeField] private VoidEvent onGameStarted;
     [SerializeField] private VoidEvent onTimeFinished;
+
 
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private Image timerImg;
@@ -19,6 +21,14 @@ public class Countdown : MonoTimer
 
     string hile = "";
 
+    private void OnEnable()
+    {
+        //onGameStarted.RemoveListener(StartGame);
+    }
+    private void OnDisable()
+    {
+        //onGameStarted.RemoveListener(StartGame);
+    }
     void Start()
     {
         base.SetRemainingTime(1f);

@@ -143,7 +143,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5991d48333eeac34e8d8559f97e12443, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1e88ad5fca0e21446b512758acc3ca4d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -165,11 +165,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c8b74b96ca28b459171bb4c3073cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onGameStarted: {fileID: 11400000, guid: a7b2aef39eb1d8c45a0ceff22ec68a0a, type: 2}
   onOrderCreated: {fileID: 11400000, guid: d618544d023845647aa26adc70d68865, type: 2}
   onOrderClosed: {fileID: 11400000, guid: 5cb2dccda852c064bbf3cd8f7f0280f4, type: 2}
   onOrderTimeOut: {fileID: 11400000, guid: 771c8b3c7414af84f809cde51acbe999, type: 2}
   orderTime: 25
-  currentOrder: {fileID: 11400000, guid: 1c91b36be2ee075418c4809938688c9d, type: 2}
+  currentOrder: {fileID: 11400000, guid: 73e1ecd4294b82645a0f32b4ae9b63ba, type: 2}
   fillImage: {fileID: 3520662204780736145}
   elapsedTime: 0
 --- !u!114 &1897084777630543286

@@ -7,6 +7,7 @@ using static Unity.Burst.Intrinsics.Arm;
 public class Till : MonoBehaviour
 {
     [Header("Events")]
+    [SerializeField] private VoidEvent onGameStarted;
     [SerializeField] private IntEvent onMoneyValueChanged;
     [SerializeField] private ItemSOEvent onItemPicked;
 
@@ -25,13 +26,23 @@ public class Till : MonoBehaviour
     private bool playerInside = false;
     bool canSendItemSO = false;
 
-    void Start()
+    private void OnEnable()
     {
+        onGameStarted.AddListener(StartGame);
+    }
+    private void OnDisable()
+    {
+        onGameStarted.RemoveListener(StartGame);
+    }
+
+    void StartGame()
+    {
+        Debug.Log("çalýþtý");
         if (GetComponent<Animator>())
         {
             animator = GetComponent<Animator>();
         }
-        onMoneyValueChanged.Raise(4);
+        onMoneyValueChanged.Raise(4);/*
         switch (this.tag)
         { 
             case "DomatesSpawn":
@@ -51,7 +62,7 @@ public class Till : MonoBehaviour
                 break;
             default:
                 break;
-        }
+        }*/
         canSendItemSO = true;
     }
 

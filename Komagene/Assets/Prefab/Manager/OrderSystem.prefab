@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e3b80b012a318a4db53b691905a388e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onGameStarted: {fileID: 11400000, guid: a7b2aef39eb1d8c45a0ceff22ec68a0a, type: 2}
   onOrderTimeOut: {fileID: 11400000, guid: 771c8b3c7414af84f809cde51acbe999, type: 2}
   onOrderCreated: {fileID: 11400000, guid: d618544d023845647aa26adc70d68865, type: 2}
   onOrderDelivered: {fileID: 11400000, guid: a680774471e53e6439f03474ddc41e4f, type: 2}

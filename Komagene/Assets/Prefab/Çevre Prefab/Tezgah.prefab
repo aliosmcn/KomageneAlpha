@@ -146,8 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d04e6229da5614db186997747fc597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onNearestObjectFound: {fileID: 11400000, guid: 1101951e244a7ea4b911a35d8f389151,
-    type: 2}
   containedObject: {fileID: 0}
   focusedMaterial: {fileID: -876546973899608171, guid: ef05c6146ba918743b3e1e01ca8235c2,
     type: 3}

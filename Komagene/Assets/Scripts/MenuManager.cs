@@ -4,37 +4,19 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private GameObject scoreBoardPanel;
-    [SerializeField] private GameObject playerNamePanel;
-    [SerializeField] private InputField inputField;
-
-    public string isim;
+    [SerializeField] private GameObject inputPanel;
+    
     public void BaslaButton()
     {
-        playerNamePanel.SetActive(true);
-        inputField.onEndEdit.AddListener(OnInputFieldEndEdit);
+        inputPanel.SetActive(true);
     }
     public void CikisButton()
     {
         Debug.Log("Oyundan çýkýldý.");
         Application.Quit();
-    }
-
-    public void ScoreBoardButton(bool state)
-    {
-        scoreBoardPanel.SetActive(state);
-    }
-
-    public void StartLevel()
-    {
-        SceneManager.LoadScene(1);
-    }
-
-    private void OnInputFieldEndEdit(string input)
-    {
-        isim = input;
     }
 }

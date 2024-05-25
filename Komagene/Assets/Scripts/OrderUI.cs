@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class OrderUI : MonoTimer
 {
+    [Header("Events")]
+    [SerializeField] private VoidEvent onGameStarted;
     [SerializeField] private OrderSOEvent onOrderCreated;
     [SerializeField] private OrderSOEvent onOrderClosed;
     [SerializeField] private OrderSOEvent onOrderTimeOut;
@@ -19,6 +21,14 @@ public class OrderUI : MonoTimer
 
     [SerializeField] private float elapsedTime = 0f;
 
+    private void OnEnable()
+    {
+        //onGameStarted.AddListener(StartGame);
+    }
+    private void OnDisable()
+    {
+        //onGameStarted.RemoveListener(StartGame);
+    }
     void Start()
     {
         base.SetRemainingTime(0.01f);

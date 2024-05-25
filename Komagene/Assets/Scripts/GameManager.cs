@@ -10,17 +10,21 @@ using System;
 public class GameManager : MonoBehaviour
 {
     [Header("Events")]
+    [SerializeField] private VoidEvent onGameStarted;
     [SerializeField] private IntEvent onMoneyValueChanged;
     [SerializeField] private ItemSOEvent onItemPicked;
     [SerializeField] private VoidEvent onTimeFinished;
     [SerializeField] private ItemSOEvent onOrderDelivered;
+    [SerializeField] private VoidEvent onStartAnimation;
+    [SerializeField] private VoidEvent onEndAnimation;
 
     [Header("UI")]
     [SerializeField] private GameObject finishPanel;
     [SerializeField] private Text itemsText;
     [SerializeField] private Text hasilatText;
     [SerializeField] private Text ordersText;
-
+    [SerializeField] private GameObject inGameUI;
+    [SerializeField] private GameObject recipePanel;
 
     //List<GameObject> foods = new List<GameObject>();
     List<string> deliveredOrders = new List<string>();
@@ -44,7 +48,11 @@ public class GameManager : MonoBehaviour
         onTimeFinished.RemoveListener(TimeFinished);
         onOrderDelivered.RemoveListener(AddOrderList);
     }
-
+    private void Start()
+    {
+        onStartAnimation.Raise();
+    }
+    
     private void MoneyValueChange(int deger)
     {
         money += deger;
@@ -67,7 +75,7 @@ public class GameManager : MonoBehaviour
 
         if (money >= 0) hasilatText.color = Color.green;
         else hasilatText.color = Color.red;
-
+        #region WriteUITexts
         hasilatText.text = money.ToString();
         //TESLÝM EDÝLEN SÝPARÝÞLERÝ YAZDIR
         foreach (string item in deliveredOrders)
@@ -101,6 +109,7 @@ public class GameManager : MonoBehaviour
         {
             itemsText.text += $"{kvp.Key} x {kvp.Value}" + "\n";
         }
+        #endregion UITexts
     }
 
 
@@ -118,5 +127,22 @@ public class GameManager : MonoBehaviour
                 // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
+        if (recipePanel.activeSelf)
+        {
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                recipePanel.GetComponent<Animator>().Play("RecipeAnim");
+                Invoke(nameof(EndRecipeAnim), 1f);
+                
+            }
+        }
     }
+    private void EndRecipeAnim()
+    {
+        onGameStarted.Raise();
+        recipePanel.SetActive(false);
+        inGameUI.SetActive(true);
+        
+    }
+
 }

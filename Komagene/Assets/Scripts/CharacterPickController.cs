@@ -6,6 +6,7 @@ public class CharacterPickController : Character
 {
 
     [Header("Events")]
+    [SerializeField] private VoidEvent onGameStarted;
     [SerializeField] private VoidEvent onSpacePressed;
     [SerializeField] private ItemSOEvent onOrderDelivered;
 
@@ -26,6 +27,7 @@ public class CharacterPickController : Character
         base.OnEnable();
         onSpacePressed.AddListener(SpacePressed);
         onOrderDelivered.AddListener(ClearToPickObject);
+        onGameStarted.AddListener(StartGame);
     }
 
     protected override void OnDisable()
@@ -33,9 +35,10 @@ public class CharacterPickController : Character
         base.OnDisable();
         onSpacePressed.RemoveListener(SpacePressed);
         onOrderDelivered.RemoveListener(ClearToPickObject);
+        onGameStarted.RemoveListener(StartGame);
     }
 
-    protected override void Start()
+    protected void StartGame()
     {
         base.Start();
         closestObjectManager = GetComponent<ClosestObjectManager>();

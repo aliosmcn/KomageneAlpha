@@ -11,22 +11,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c9add96b464d6fc4ab38fd007d95a31c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: 5.9650106
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9add96b464d6fc4ab38fd007d95a31c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -5.6582546
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9add96b464d6fc4ab38fd007d95a31c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0009061098
+      value: -4.9866257
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9add96b464d6fc4ab38fd007d95a31c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.0000029504295
+      value: 0.70710784
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9add96b464d6fc4ab38fd007d95a31c,
         type: 3}
@@ -36,7 +36,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c9add96b464d6fc4ab38fd007d95a31c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1
+      value: -0.70710576
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9add96b464d6fc4ab38fd007d95a31c,
         type: 3}
@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c9add96b464d6fc4ab38fd007d95a31c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -180
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9add96b464d6fc4ab38fd007d95a31c,
         type: 3}
@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9a508689d6e9747a0d89e2ce0fba2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onGameStarted: {fileID: 11400000, guid: a7b2aef39eb1d8c45a0ceff22ec68a0a, type: 2}
   onMoneyValueChanged: {fileID: 11400000, guid: bc070252f621f934ab4b51b8271f20e3,
     type: 2}
   onItemPicked: {fileID: 11400000, guid: 35d278cb241f6224da31cb3bc95af1ad, type: 2}

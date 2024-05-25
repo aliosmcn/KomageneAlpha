@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 public class OrderSystem : MonoTimer
 {
     [Header("Events")]
+    [SerializeField] private VoidEvent onGameStarted;
     [SerializeField] private OrderSOEvent onOrderTimeOut;
     [SerializeField] private OrderSOEvent onOrderCreated;
     [SerializeField] private ItemSOEvent onOrderDelivered; //bu teslim tezgahında raise edilecek
@@ -34,12 +35,14 @@ public class OrderSystem : MonoTimer
     {
         onOrderTimeOut.AddListener(CloseOrder);
         onOrderDelivered.AddListener(CheckOrderCorrect);
+        //onGameStarted.AddListener(StartGame);
     }
 
     private void OnDisable()
     {
         onOrderTimeOut.RemoveListener(CloseOrder);
         onOrderDelivered.RemoveListener(CheckOrderCorrect);
+        //onGameStarted.RemoveListener(StartGame);
     }
 
     private void Start()
