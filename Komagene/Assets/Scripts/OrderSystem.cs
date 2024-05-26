@@ -96,11 +96,13 @@ public class OrderSystem : MonoTimer
     private void TrueOrder()
     {
         onMoneyValueChanged.Raise(100);
+        AudioManager.Instance.PlaySFX("trueOrder");
         orderCorrectParticle.Play();
     }
     private void FalseOrder()
     {
         onMoneyValueChanged.Raise(-20);
+        AudioManager.Instance.PlaySFX("falseOrder");
         orderFalseParticle.Play();
     }
     

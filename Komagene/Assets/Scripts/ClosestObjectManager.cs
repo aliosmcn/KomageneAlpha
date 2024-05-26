@@ -52,7 +52,7 @@ public class ClosestObjectManager : MonoBehaviour
             if (hitCollider.gameObject.tag == "Masa")
             {
                 hitCollider.gameObject.GetComponent<MeshRenderer>().sharedMaterial = unFocusedMaterial;
-                FindAnyObjectByType<Tezgah>().gameObject.GetComponent<MeshRenderer>().sharedMaterial = unFocusedMaterial;
+                //FindAnyObjectByType<Tezgah>().gameObject.GetComponent<MeshRenderer>().sharedMaterial = unFocusedMaterial;
             }
         }
 

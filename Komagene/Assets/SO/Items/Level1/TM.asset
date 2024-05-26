@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TM
   m_EditorClassIdentifier: 
   itemId: TM
-  itemName: tabak marul
+  itemName: Marul
   itemIcon: {fileID: 0}
   prefab: {fileID: 4202615294692201742, guid: 05347a006df734d4693149ede3e8dc99, type: 3}
+  canSlice: 0

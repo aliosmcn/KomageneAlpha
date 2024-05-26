@@ -68,13 +68,7 @@ public abstract class Character : MonoBehaviour
         movement = new Vector3(horizontalInput, 0f, verticalInput).normalized;
 
 
-        // Karakterin gittiði yöne dön
-        if (movement != Vector3.zero)
-        {
-            animator.SetBool("IsWalk", true);
-            Quaternion targetRotation = Quaternion.LookRotation(movement); // Hedef rotasyonu hesapla
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 20f); // Yumuþak bir dönüþ saðla
-        }
+        
         if (movement == Vector3.zero)
         {
             animator.SetBool("IsWalk", false);
@@ -85,6 +79,13 @@ public abstract class Character : MonoBehaviour
     {
         // Karakterin hareketini uygular
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        // Karakterin gittiði yöne dön
+        if (movement != Vector3.zero)
+        {
+            animator.SetBool("IsWalk", true);
+            Quaternion targetRotation = Quaternion.LookRotation(movement); // Hedef rotasyonu
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 15f); // Yumuþak dönüþ
+        }
     }
 
     // Hareketi slice durumuna göre freeze eder.

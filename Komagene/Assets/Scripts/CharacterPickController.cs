@@ -57,6 +57,7 @@ public class CharacterPickController : Character
             containingObject = toPickObject;
             if (toPickObject != null) rigid = containingObject.GetComponent<Rigidbody>();
             else return;
+            AudioManager.Instance.PlaySFX("pick");
             containingObject.transform.position = HoldPoint.position;
             containingObject.transform.SetParent(HoldPoint);
             SetRbAndColliderActive(false);
@@ -71,6 +72,7 @@ public class CharacterPickController : Character
             //YERE BIRAK
             if (closestObjectManager.nearestObject == null)
             {
+                AudioManager.Instance.PlaySFX("drop");
                 SetRbAndColliderActive(true);
                 containingObject.transform.parent = null;
                 containingObject = null;
@@ -98,6 +100,7 @@ public class CharacterPickController : Character
                         if (c.SearchRecipe2(containingObject.GetComponent<Item>().ItemData.ItemID, spawnPos))
                         {
                             Destroy(containingObject);
+                            AudioManager.Instance.PlaySFX("drop");
                         }
                         return;
                     }
@@ -106,6 +109,7 @@ public class CharacterPickController : Character
                     {
                         Combiner c = containingObject.GetComponent<Combiner>();
                         c.SearchRecipe2(tezgah.ContainedObject.GetComponent<Item>().ItemData.ItemID, spawnPos);
+                        AudioManager.Instance.PlaySFX("drop");
                         return;
                     }
 
@@ -114,7 +118,7 @@ public class CharacterPickController : Character
                 {
                     //TEZGAH BOŞSA
                     tezgah.SetContainedObject(containingObject);
-
+                    AudioManager.Instance.PlaySFX("drop");
                     SetRbAndColliderActive(false);
                     containingObject.transform.parent = closestObjectManager.nearestObject.transform;
                     containingObject.transform.position = new Vector3(closestObjectManager.nearestObject.transform.position.x, closestObjectManager.nearestObject.transform.position.y + 0.42f, closestObjectManager.nearestObject.transform.position.z);

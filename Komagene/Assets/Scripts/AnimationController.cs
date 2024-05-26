@@ -26,6 +26,7 @@ public class AnimationController : MonoBehaviour
     private void StartAnim()
     {
         startAnimPrefab.SetActive(true);
+        AudioManager.Instance.PlaySFX("gecisBas");
         Invoke(nameof(DisableStartAnim), 5f);
     }
     private void DisableStartAnim()
@@ -36,6 +37,13 @@ public class AnimationController : MonoBehaviour
     private void EndAnim()
     {
         endAnimPrefab.SetActive(true);
+        AudioManager.Instance.PlaySFX("gecisSon");
+        Invoke(nameof(DisableEndAnim), 1f);
     }
-    
+
+    private void DisableEndAnim()
+    {
+        endAnimPrefab.SetActive(false);
+    }
+
 }

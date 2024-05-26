@@ -37,7 +37,6 @@ public class Till : MonoBehaviour
 
     void StartGame()
     {
-        Debug.Log("çalýþtý");
         if (GetComponent<Animator>())
         {
             animator = GetComponent<Animator>();

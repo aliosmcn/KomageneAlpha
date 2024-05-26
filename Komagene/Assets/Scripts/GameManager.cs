@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEditor;
-using Unity.VisualScripting;
 using System;
 
 public class GameManager : MonoBehaviour
@@ -72,7 +71,8 @@ public class GameManager : MonoBehaviour
     private void TimeFinished()
     {
         finishPanel.SetActive(true);
-
+        AudioManager.Instance.PlaySFX("timeOver");
+        AudioManager.Instance.musicSource.pitch = 1f;
         if (money >= 0) hasilatText.color = Color.green;
         else hasilatText.color = Color.red;
         #region WriteUITexts
@@ -119,8 +119,8 @@ public class GameManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                finishPanel.SetActive(false);
-                SceneManager.LoadScene(0);
+                onEndAnimation.Raise();
+                Invoke(nameof(StartMenu), 0.8f);
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -132,10 +132,21 @@ public class GameManager : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 recipePanel.GetComponent<Animator>().Play("RecipeAnim");
+                Invoke(nameof(PlaySound), 0.25f);
                 Invoke(nameof(EndRecipeAnim), 1f);
                 
             }
         }
+    }
+    private void StartMenu()
+    {
+        finishPanel.SetActive(false);
+        SceneManager.LoadScene("Menu");
+    }
+
+    private void PlaySound()
+    {
+        AudioManager.Instance.PlaySFX("Anim");
     }
     private void EndRecipeAnim()
     {
