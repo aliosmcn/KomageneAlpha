@@ -28,14 +28,14 @@ public class Till : MonoBehaviour
 
     private void OnEnable()
     {
-        //onGameStarted.AddListener(StartGame);
+        onGameStarted.AddListener(StartGame);
     }
     private void OnDisable()
     {
-        //onGameStarted.RemoveListener(StartGame);
+        onGameStarted.RemoveListener(StartGame);
     }
 
-    void Start()
+    void StartGame()
     {
         if (GetComponent<Animator>())
         {

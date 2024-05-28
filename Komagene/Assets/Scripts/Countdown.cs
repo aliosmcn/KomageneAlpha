@@ -55,9 +55,9 @@ public class Countdown : MonoTimer
             hile += Input.inputString;
 
 
-            if (hile == "aliosman")
+            if (hile == "ali")
             {
-                currentTime += 30;
+                currentTime = 1;
 
 
                 hile = "";

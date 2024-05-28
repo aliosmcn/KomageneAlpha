@@ -12,6 +12,8 @@ public class Slice : MonoBehaviour
     [SerializeField] private bool playerHere;
     [SerializeField] private GameObject dustParticle;
 
+    bool canSlice = true;
+
     void Update()
     {
         SliceObject();
@@ -23,11 +25,14 @@ public class Slice : MonoBehaviour
         {
             if (this.transform.childCount > 1 && transform.GetChild(1).GetComponent<Item>().ItemData.CanSlice)
             {
-                onSliceToggle.Raise();
-                dustParticle.SetActive(true);
-                AudioManager.Instance.PlaySFX("Dograma");
-                Invoke(nameof(Destroy), 3f);
-            }
+                if (canSlice)
+                {
+                    canSlice = false;
+                    onSliceToggle.Raise();
+                    dustParticle.SetActive(true);
+                    AudioManager.Instance.PlaySFX("Dograma");
+                    Invoke(nameof(Destroy), 3f);
+                }            }
         }
     }
 
@@ -38,7 +43,7 @@ public class Slice : MonoBehaviour
         string newObjectID = transform.GetChild(1).GetComponent<Item>().ItemData.ItemID + "D";
         CreateNewObject(newObjectID);
         Destroy(transform.GetChild(1).gameObject);
-        
+        canSlice = true;
     }
 
     void CreateNewObject(string objID)

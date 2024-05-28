@@ -147,11 +147,17 @@ public class GameManager : MonoBehaviour
     private void StartMenu()
     {
         finishPanel.SetActive(false);
+        hasilatText.text = "";
+        itemsText.text = "";
+        ordersText.text = "";
         SceneManager.LoadScene("Menu");
     }
     private void NextLevel()
     {
         finishPanel.SetActive(false);
+        hasilatText.text = "";
+        itemsText.text = "";
+        ordersText.text = "";
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
     private void PlaySound()

@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 11538
+  controlID: 63
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 79
+  controlID: 54
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -270,8 +270,8 @@ MonoBehaviour:
     y: 0
     width: 460
     height: 939
-  m_MinSize: {x: 276, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -417,7 +417,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 7039feff283afeffbe4cfeff764dfeff1458feffe458feff345bfeff7477feff5c90feff249bfeff28a0feff30a3feff00a5feff02a5feff6aa9feff42b0feff22b5feffb23cffff78f1ffffaaf3fffff66d0000146e0000cc6f000088700000b6720000ce72000036730000a8730000dea5020092a60200aec8020062c90200fcce020034d00200bed0020094d5020016d70200
+      m_ExpandedIDs: 483dffff003effff9650ffff4e51ffffec5bffffbc5cffff00a1ffff2ef8ffff2efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -889,9 +889,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -4.62449, y: -7.421601, z: -0.45875534}
+    m_Target: {x: -1.2679393, y: -5.536785, z: 2.36207}
     speed: 2
-    m_Value: {x: -4.62449, y: -7.421601, z: -0.45875534}
+    m_Value: {x: -1.2679393, y: -5.536785, z: 2.36207}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -937,13 +937,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.42859212, y: -0.12934837, z: 0.062146094, w: 0.8920346}
+    m_Target: {x: 0.4664427, y: 0.11613636, z: -0.061930556, w: 0.87470466}
     speed: 2
-    m_Value: {x: 0.42858997, y: -0.12934773, z: 0.06214578, w: 0.8920301}
+    m_Value: {x: 0.4664427, y: 0.11613636, z: -0.061930556, w: 0.87470466}
   m_Size:
-    m_Target: 8.262262
+    m_Target: 8.512418
     speed: 2
-    m_Value: 8.262262
+    m_Value: 8.512418
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1257,7 +1257,7 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1265,16 +1265,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scenes
+  - Assets
   m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\GitHub\KomageneProject\Komagene
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 1174}
-    m_SelectedIDs: 40d70000
-    m_LastClickedID: 55104
-    m_ExpandedIDs: 000000004482000032d7000034d7000058d700005ad7000088d700005c020100d61d010000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 9c6f0000
+    m_LastClickedID: 28572
+    m_ExpandedIDs: 000000009c6f0000307100005e44010000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1302,7 +1302,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: aa2c0000
     m_LastClickedID: 11434
-    m_ExpandedIDs: 0000000044820000
+    m_ExpandedIDs: 000000009c6f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
