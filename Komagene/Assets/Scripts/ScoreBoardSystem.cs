@@ -17,7 +17,7 @@ public class ScoreBoardSystem : MonoBehaviour
 
     [SerializeField] private GameObject inputPanel;
 
-    public List<string> Names = new();
+    public string playerName;
 
     private void Update()
     {
@@ -39,7 +39,7 @@ public class ScoreBoardSystem : MonoBehaviour
         
         if (inputField.text!="")
         {
-            Names.Add(inputField.text);
+            playerName = inputField.text;
 
             StartAnim();
         }

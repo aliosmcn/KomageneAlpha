@@ -448,6 +448,7 @@
 "Assets/Scripts/OrderUIController.cs"
 "Assets/Scripts/PickAndDrop.cs"
 "Assets/Scripts/ScoreBoardSystem.cs"
+"Assets/Scripts/ScoreManager.cs"
 "Assets/Scripts/ScriptableObjects/DataContainers/ItemSO.cs"
 "Assets/Scripts/ScriptableObjects/DataContainers/OrderSO.cs"
 "Assets/Scripts/ScriptableObjects/Events/FloatEvent.cs"

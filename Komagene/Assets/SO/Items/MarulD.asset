@@ -15,5 +15,5 @@ MonoBehaviour:
   itemId: MD
   itemName: MarulD
   itemIcon: {fileID: 0}
-  prefab: {fileID: 2302528548082591056, guid: cce4533d2b364db46bbdaf7bb80231f3, type: 3}
+  prefab: {fileID: 1397493384846142222, guid: 94e71b93cf2f6874e95c149ff4ce877a, type: 3}
   canSlice: 0

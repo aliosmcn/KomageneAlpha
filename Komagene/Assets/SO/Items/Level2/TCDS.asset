@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TCDS
   m_EditorClassIdentifier: 
   itemId: TCDS
-  itemName: TabakCigkofteDomatesLimon
-  itemIcon: {fileID: 0}
+  itemName: Limonlu Domatesli Porsiyon
+  itemIcon: {fileID: 21300000, guid: 5e55f54d44c96c746a3f3bb4a05ba6b3, type: 3}
   prefab: {fileID: 2560383786140536607, guid: 2d27f1f8173a0154ea0bed4e7806a1b1, type: 3}
   canSlice: 0

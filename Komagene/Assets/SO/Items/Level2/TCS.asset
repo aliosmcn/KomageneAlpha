@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TCS
   m_EditorClassIdentifier: 
   itemId: TCS
-  itemName: TabakCigkofteLimon
-  itemIcon: {fileID: 0}
+  itemName: Limonlu Porsiyon
+  itemIcon: {fileID: 21300000, guid: a5c60ca3b1a0930449032b75470c9d3b, type: 3}
   prefab: {fileID: 6030248876798765144, guid: a2cdc84f393325b40b4c308761a7fb4f, type: 3}
   canSlice: 0

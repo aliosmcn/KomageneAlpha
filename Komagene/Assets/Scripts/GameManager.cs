@@ -124,7 +124,11 @@ public class GameManager : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                if (SceneManager.GetActiveScene().buildIndex == 1)
+                {
+                    onEndAnimation.Raise();
+                    Invoke(nameof(NextLevel), 0.8f);
+                }
             }
         }
         if (recipePanel.activeSelf)
@@ -138,12 +142,18 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    
     private void StartMenu()
     {
         finishPanel.SetActive(false);
         SceneManager.LoadScene("Menu");
     }
-
+    private void NextLevel()
+    {
+        finishPanel.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+    }
     private void PlaySound()
     {
         AudioManager.Instance.PlaySFX("Anim");

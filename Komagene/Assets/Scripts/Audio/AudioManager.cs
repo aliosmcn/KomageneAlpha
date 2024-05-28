@@ -28,9 +28,13 @@ public class AudioManager : MonoBehaviour
         PlayMusic("GameMusic");
     }
 
+    
+
     public void PlayMusic(string name)
     {
         Sound ses = Array.Find(musicSounds, x => x.name == name);
+
+
 
         if (ses == null)
         {
@@ -39,7 +43,7 @@ public class AudioManager : MonoBehaviour
         else
         {
             musicSource.clip = ses.clip;
-            if (SceneManager.GetActiveScene().buildIndex == 0)
+            if (SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 2)
             {
                 musicSource.pitch = 1f;
                 musicSource.Play();

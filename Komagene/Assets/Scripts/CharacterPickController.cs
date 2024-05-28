@@ -27,7 +27,7 @@ public class CharacterPickController : Character
         base.OnEnable();
         onSpacePressed.AddListener(SpacePressed);
         onOrderDelivered.AddListener(ClearToPickObject);
-        onGameStarted.AddListener(StartGame);
+        //onGameStarted.AddListener(StartGame);
     }
 
     protected override void OnDisable()
@@ -35,10 +35,10 @@ public class CharacterPickController : Character
         base.OnDisable();
         onSpacePressed.RemoveListener(SpacePressed);
         onOrderDelivered.RemoveListener(ClearToPickObject);
-        onGameStarted.RemoveListener(StartGame);
+        //onGameStarted.RemoveListener(StartGame);
     }
 
-    protected void StartGame()
+    protected override void Start()
     {
         base.Start();
         closestObjectManager = GetComponent<ClosestObjectManager>();
@@ -64,7 +64,14 @@ public class CharacterPickController : Character
             if (closestObjectManager.nearestObject != null)
             {
                 tezgah = closestObjectManager.nearestObject.GetComponent<Tezgah>();
-                tezgah.ContainedObject = null;
+                if (toPickObject == tezgah.ContainedObject)
+                {
+                    tezgah.ContainedObject = null;
+                    //MAŞALLAH
+                }
+                
+                
+                
             }
         }
         else // --------- ELİM DOLU, İTEMİ BIRAK ----------
@@ -117,6 +124,9 @@ public class CharacterPickController : Character
                 else
                 {
                     //TEZGAH BOŞSA
+                    if (tezgah.gameObject.tag == "Teslim" && !containingObject.GetComponent<Combiner>()) return;
+                    if (tezgah.gameObject.tag == "Teslim" && containingObject.GetComponent<Item>().ItemData.ItemID == "T") return;
+                    if (tezgah.gameObject.tag == "DogramaTahtasi" && !containingObject.GetComponent<Item>().ItemData.CanSlice) return;
                     tezgah.SetContainedObject(containingObject);
                     AudioManager.Instance.PlaySFX("drop");
                     SetRbAndColliderActive(false);

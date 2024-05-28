@@ -25,6 +25,7 @@ public class Slice : MonoBehaviour
             {
                 onSliceToggle.Raise();
                 dustParticle.SetActive(true);
+                AudioManager.Instance.PlaySFX("Dograma");
                 Invoke(nameof(Destroy), 3f);
             }
         }

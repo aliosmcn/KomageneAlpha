@@ -12,8 +12,10 @@ public abstract class Character : MonoBehaviour
     [SerializeField] private FloatEvent onHorizontalValueChanged;
     [SerializeField] private FloatEvent onVerticalValueChanged;
     [SerializeField] private VoidEvent onSliceToggle;
-    
-    private Animator animator;
+
+    [HideInInspector] public Animator animator;
+
+
     private Rigidbody rb; // Karakterin Rigidbody bileþeni
 
     private bool canMove = true;
@@ -67,8 +69,6 @@ public abstract class Character : MonoBehaviour
         // Hareket vektörünü oluþtur
         movement = new Vector3(horizontalInput, 0f, verticalInput).normalized;
 
-
-        
         if (movement == Vector3.zero)
         {
             animator.SetBool("IsWalk", false);

@@ -28,14 +28,14 @@ public class Till : MonoBehaviour
 
     private void OnEnable()
     {
-        onGameStarted.AddListener(StartGame);
+        //onGameStarted.AddListener(StartGame);
     }
     private void OnDisable()
     {
-        onGameStarted.RemoveListener(StartGame);
+        //onGameStarted.RemoveListener(StartGame);
     }
 
-    void StartGame()
+    void Start()
     {
         if (GetComponent<Animator>())
         {
@@ -92,11 +92,10 @@ public class Till : MonoBehaviour
         }
         if (playerInside && Input.GetKeyDown(KeyCode.Space) && GetComponent<Animator>())
         {
-            animator.SetBool("isTake", true);
-            Invoke(nameof(SetAnimationFalse), 0.625f);
+            animator.Play("KasaAnim");
         }
     }
-    
+
     void Spawn(GameObject nesne)
     {
         if (GameObject.Find("Hold").transform.childCount == 0)
@@ -108,7 +107,6 @@ public class Till : MonoBehaviour
             newObject.transform.SetParent(transform);
             objCll = GetComponentInParent<BoxCollider>();
             objRb = GetComponentInParent<Rigidbody>();
-            
             onMoneyValueChanged.Raise(-5);
             if (canSendItemSO) onItemPicked.Raise(newObject.GetComponent<Item>().ItemData);
         }
@@ -132,7 +130,7 @@ public class Till : MonoBehaviour
         {
             playerInside = true;
         }
-        
+
 
     }
 
@@ -142,10 +140,5 @@ public class Till : MonoBehaviour
         {
             playerInside = false; // Karakter kutudan çýktý
         }
-    }
-
-    private void SetAnimationFalse()
-    {
-        animator.SetBool("isTake", false);
     }
 }
